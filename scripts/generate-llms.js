@@ -10,7 +10,7 @@ import { SITES, FINDINGS, TOP10, CATEGORY_ROWS, FEATURE_GAPS, EARNING_MODELS, EM
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-let txt = `# ${SITE_NAME}\n\n> ${SITE_TAGLINE}\n> A directory of 60+ tools websites, reviewed in Roman Urdu. Research date: ${RESEARCH_DATE}. Author: Muhammad Zain Mushtaq.\n> Contact: ${CONTACT_EMAIL}\n\n## Key pages\n\n`;
+let txt = `# ${SITE_NAME}\n\n> ${SITE_TAGLINE}\n> A directory of ${SITES.length} tools websites, reviewed in Roman Urdu. Research date: ${RESEARCH_DATE}. Author: Muhammad Zain Mushtaq.\n> Contact: ${CONTACT_EMAIL}\n\n## Key pages\n\n`;
 for (const p of publicPages) {
   const meta = STATIC_PAGES[p.path];
   txt += `- [${meta ? meta.title : p.path}](${SITE_URL}${p.path})${meta ? `: ${meta.description}` : ""}\n`;

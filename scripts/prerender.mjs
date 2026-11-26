@@ -52,10 +52,30 @@ import {
   breadcrumbJsonLd,
   faqJsonLd,
   itemListJsonLd,
-  webPageJsonLd,
-  websiteJsonLd,
-  organizationJsonLd
+  webPageJsonLd
 } from "../frontend/src/config/seo.js";
+import { HOME_FAQS, SITES_FAQS, TOP10_FAQS, GAPS_FAQS, TIER_FAQS } from "../frontend/src/config/faqs.js";
+
+const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+
+const ABOUT_FAQS = [
+  {
+    q: "Yeh directory kya hai?",
+    a: "Yeh 78 tools websites ka aik jaiza hai — har site ka tier, tools ki tadaad, focus aur notes, Roman Urdu mein, aik hi jagah par."
+  },
+  {
+    q: "Tiers kaise kaam karte hain?",
+    a: "Har site Tier A se F tak aik tier mein hai: A sab se badi sites, B bare generalists aur solvers, C 'all tools' sites, D Pakistan-specific sites, E Islamic finance/life, aur F agriculture/farmer tools."
+  },
+  {
+    q: "Kya yeh saari maloomat verify hain?",
+    a: "Nahi — kuch details verify nahi hui hain aur kuch figures estimates hain. Har site ko khud check karein; Sources page par poori tafseel hai."
+  }
+];
+
+function faqHtml(faqs) {
+  return `<h2>Aam sawalat</h2>${(faqs || []).map((f) => `<div class="faq"><h3>${esc(f.q)}</h3><p>${esc(f.a)}</p></div>`).join("")}`;
+}
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = resolve(process.argv[2] || join(root, "frontend/dist"));
@@ -127,6 +147,10 @@ function routeMeta(path, base) {
     if (!tier) throw new Error(`unknown tier route: ${path}`);
     const page = STATIC_PAGES[path];
     const sites = sitesByTier(tier.id);
+    const faqs = TIER_FAQS[tier.id] || [];
+    const tierIndex = (TIERS || []).findIndex((t) => t.id === tier.id);
+    const prevTier = tierIndex > 0 ? TIERS[tierIndex - 1] : null;
+    const nextTier = tierIndex >= 0 && tierIndex < TIERS.length - 1 ? TIERS[tierIndex + 1] : null;
     return {
       ...page,
       jsonLd: [
@@ -140,12 +164,16 @@ function routeMeta(path, base) {
         itemListJsonLd(
           `Tier ${tier.letter} — ${tier.name}`,
           sites.map((s) => ({ name: s.name, url: s.url }))
-        )
+        ),
+        ...(faqs.length ? [faqJsonLd(faqs)] : [])
       ],
       body:
         `<p><strong>Takeaway:</strong> ${esc(tier.takeaway)}</p>` +
         `<p>${sites.length} sites — Tier ${tier.letter}</p>` +
-        siteLinkList(sites),
+        `<h2>Tier ${tier.letter} ki sites</h2>` +
+        siteLinkList(sites) +
+        (faqs.length ? faqHtml(faqs) : "") +
+        `<p>${prevTier ? `<a href="${esc(withBase(base, `/tiers/${prevTier.id}`))}">← Tier ${prevTier.letter}</a> · ` : ""}<a href="${esc(withBase(base, "/sites"))}">Saari sites →</a> · <a href="${esc(withBase(base, "/top-10"))}">Top 10 additions →</a>${nextTier ? ` · <a href="${esc(withBase(base, `/tiers/${nextTier.id}`))}">Tier ${nextTier.letter} →</a>` : ""}</p>`,
       links: sites.map((s) => ({ href: s.url, label: s.name }))
     };
   }
@@ -159,7 +187,8 @@ function routeMeta(path, base) {
   if (path === "/") {
     const stats = SITE_STATS || {};
     body =
-      `<p>${stats.sites || SITES.length} sites · ${stats.entries || ""} entries · ${stats.tiers || 6} tiers · Research: ${esc(stats.researchDate || "26 Nov 2026")}</p>` +
+      `<img src="${esc(withBase(base, "/og-image.jpg"))}" alt="Tools Websites Directory — 78 tools websites ki directory, tiers A se F tak" width="2192" height="1152" style="max-width:100%;height:auto;border-radius:8px;margin-top:16px" />` +
+      `<p>${stats.sites || SITES.length} sites · ${stats.entries || ""} report entries · ${stats.tiers || 6} tiers · Research: ${esc(stats.researchDate || "26 Nov 2026")}</p>` +
       `<h2>Teen bade findings</h2>${(FINDINGS || [])
         .map((f) => `<h3>${f.n}. ${esc(f.title)}</h3><p>${esc(f.text)}</p>`)
         .join("")}` +
@@ -173,18 +202,25 @@ function routeMeta(path, base) {
         )
         .join("")}</ul>` +
       `<h2>Saari sites</h2>` +
-      siteLinkList(SITES);
+      siteLinkList(SITES) +
+      faqHtml(HOME_FAQS);
     links = [
       { href: "/sites", label: "Sites" },
       { href: "/top-10", label: "Top 10" },
       ...(TIERS || []).map((t) => ({ href: `/tiers/${t.id}`, label: `Tier ${t.letter}` })),
       ...SITES.map((s) => ({ href: s.url, label: s.name }))
     ];
-    jsonLd = [websiteJsonLd(), organizationJsonLd()];
+    jsonLd = [
+      webPageJsonLd({ title: page.title, description: page.description, path }),
+      breadcrumbJsonLd(crumbsFor([])),
+      faqJsonLd(HOME_FAQS)
+    ];
   } else if (path === "/sites") {
     body =
       `<p>${SITES.length} sites — har site ka tier, tools ki tadaad, focus aur notes.</p>` +
-      siteLinkList(SITES);
+      `<h2>Poori directory — tier ke hisaab se</h2>` +
+      siteLinkList(SITES) +
+      faqHtml(SITES_FAQS);
     links = SITES.map((s) => ({ href: s.url, label: s.name }));
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
@@ -192,18 +228,21 @@ function routeMeta(path, base) {
       itemListJsonLd(
         "Tools Websites Directory",
         SITES.map((s) => ({ name: s.name, url: s.url }))
-      )
+      ),
+      faqJsonLd(SITES_FAQS)
     ];
   } else if (path === "/top-10") {
     body =
       (TOP10 || [])
         .map((t) => `<h2>${t.n}. ${esc(t.title)}</h2><p>${esc(t.text)}</p>`)
         .join("") +
+      faqHtml(TOP10_FAQS) +
       `<p><strong>Order yaad rakho:</strong> pehle zabaan, phir jagah, phir features.</p>`;
     links = [{ href: "/gaps", label: "Gaps" }];
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
-      breadcrumbJsonLd(crumbsFor([["Top 10", "/top-10"]]))
+      breadcrumbJsonLd(crumbsFor([["Top 10", "/top-10"]])),
+      faqJsonLd(TOP10_FAQS)
     ];
   } else if (path === "/gaps") {
     const gap = GAP_TEXT || {};
@@ -220,20 +259,24 @@ function routeMeta(path, base) {
       `<h2>Khali niches</h2><ul>${(EMPTY_NICHES || [])
         .map((n) => `<li><strong>${esc(n.niche)}:</strong> ${esc(n.detail)}</li>`)
         .join("")}</ul>` +
+      faqHtml(GAPS_FAQS) +
       `<p><strong>Race ab tadaad ki nahi — race zabaan, jagah aur bharose ki hai.</strong></p>`;
     links = [{ href: "/top-10", label: "Top 10" }];
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
-      breadcrumbJsonLd(crumbsFor([["Gaps", "/gaps"]]))
+      breadcrumbJsonLd(crumbsFor([["Gaps", "/gaps"]])),
+      faqJsonLd(GAPS_FAQS)
     ];
   } else if (path === "/categories") {
     body =
+      `<h2>Category-wise jaiza</h2>` +
       `<table><thead><tr><th>Category</th><th>Sab se achhi coverage</th><th>Kamzor / Ghayab</th></tr></thead><tbody>${(CATEGORY_ROWS || [])
         .map(
           (r) =>
             `<tr><td><strong>${esc(r.category)}</strong></td><td>${esc(r.strong)}</td><td>${esc(r.weak)}</td></tr>`
         )
-        .join("")}</tbody></table>`;
+        .join("")}</tbody></table>` +
+      `<h2>Har kaam ke liye best site</h2><ul><li><strong>EMI / loan calculator:</strong> finance category mein sab se bara collection SumKitTool (145 finance tools) aur Toolsped (126) ka hai.</li><li><strong>Age calculator:</strong> calculator.net aur Omni Calculator — dono ke health sections mein age tools hain.</li><li><strong>Percentage calculator:</strong> calculator.net (percentage, fractions) aur Calculator Soup (maths, statistics).</li><li><strong>BMI calculator:</strong> calculator.net (fitness/health) aur Omni Calculator (Health — 440 tools).</li><li><strong>Tax calculator:</strong> US/UK tax ke liye Good Calculators; Pakistan tax ke liye <a href="${esc(withBase(base, "/tiers/d"))}">Tier D</a> ki sites.</li><li><strong>Construction calculator:</strong> Inch Calculator — is category mein sab se mazboot (math/science, construction, electrical).</li></ul>`;
     links = [{ href: "/sites", label: "Sites" }];
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
@@ -242,31 +285,20 @@ function routeMeta(path, base) {
   } else if (path === "/about") {
     body =
       `<p><strong>Disclaimer:</strong> ${esc(DISCLAIMER)}</p>` +
+      `<h2>Yeh directory kya hai</h2><p>Tools Websites Directory 26 Nov 2026 ki research report par mabni hai. Us report mein ${(SITE_STATS || {}).sites || SITES.length} tools websites ka jaiza liya gaya — ${(SITE_STATS || {}).entries || ""} report entries, ${(SITE_STATS || {}).tiers || 6} tiers mein bati hui.</p>` +
       `<h2>Tiers kaise kaam karte hain</h2><ul>${(TIERS || [])
         .map(
           (t) =>
             `<li><a href="${esc(withBase(base, `/tiers/${t.id}`))}">Tier ${t.letter} — ${esc(t.name)}</a>: ${esc(t.takeaway)}</li>`
         )
         .join("")}</ul>` +
-      `<h2>Kaun likhta hai</h2><p>By ${esc(AUTHOR_NAME)}.</p>`;
+      `<h2>Kaun likhta hai</h2><p>By ${esc(AUTHOR_NAME)}.</p>` +
+      faqHtml(ABOUT_FAQS);
     links = (TIERS || []).map((t) => ({ href: `/tiers/${t.id}`, label: `Tier ${t.letter}` }));
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
       breadcrumbJsonLd(crumbsFor([["About", "/about"]])),
-      faqJsonLd([
-        {
-          q: "Yeh directory kya hai?",
-          a: "Yeh 60+ tools websites ka aik jaiza hai — har site ka tier, tools ki tadaad, focus aur notes, Roman Urdu mein, aik hi jagah par."
-        },
-        {
-          q: "Tiers kaise kaam karte hain?",
-          a: "Har site Tier A se F tak aik tier mein hai: A sab se badi sites, B bare generalists aur solvers, C 'all tools' sites, D Pakistan-specific sites, E Islamic finance/life, aur F agriculture/farmer tools."
-        },
-        {
-          q: "Kya yeh saari maloomat verify hain?",
-          a: "Nahi — kuch details verify nahi hui hain aur kuch figures estimates hain. Har site ko khud check karein; Sources page par poori tafseel hai."
-        }
-      ])
+      faqJsonLd(ABOUT_FAQS)
     ];
   } else if (path === "/sources") {
     body =
@@ -345,6 +377,7 @@ function main() {
     html = html.replace(/<!-- prerendered: route [^>]*-->\n?/g, "");
     html = html.replace(/<link rel="canonical"[^>]*>\n?/g, "");
     html = html.replace(/<meta name="robots"[^>]*>\n?/g, "");
+    html = html.replace(/<meta name="theme-color"[^>]*>\n?/g, "");
     html = html.replace(/<meta property="og:[^>]*>\n?/g, "");
     html = html.replace(/<meta name="twitter:[^>]*>\n?/g, "");
     html = html.replace(
@@ -374,14 +407,21 @@ function main() {
       `<!-- prerendered: route ${path} -->\n` +
       `<link rel="canonical" href="${esc(seo.canonical)}" />\n` +
       `<meta name="robots" content="index,follow" />\n` +
+      `<meta name="theme-color" content="#1a5276" />\n` +
       `<meta property="og:type" content="website" />\n` +
       `<meta property="og:title" content="${esc(meta.title)}" />\n` +
       `<meta property="og:description" content="${esc(meta.description)}" />\n` +
       `<meta property="og:url" content="${esc(seo.canonical)}" />\n` +
       `<meta property="og:site_name" content="${esc(SITE_NAME)}" />\n` +
-      `<meta name="twitter:card" content="summary" />\n` +
+      `<meta property="og:image" content="${OG_IMAGE}" />\n` +
+      `<meta property="og:image:width" content="2192" />\n` +
+      `<meta property="og:image:height" content="1152" />\n` +
+      `<meta property="og:image:alt" content="Tools Websites Directory — 78 tools websites ki directory, tiers A se F tak" />\n` +
+      `<meta property="og:locale" content="ur_PK" />\n` +
+      `<meta name="twitter:card" content="summary_large_image" />\n` +
       `<meta name="twitter:title" content="${esc(meta.title)}" />\n` +
       `<meta name="twitter:description" content="${esc(meta.description)}" />\n` +
+      `<meta name="twitter:image" content="${OG_IMAGE}" />\n` +
       jsonLdBlock;
     if (!/<\/head>/.test(html)) {
       console.error(`template has no </head> (route ${path})`);

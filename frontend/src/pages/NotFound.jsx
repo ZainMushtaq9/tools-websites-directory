@@ -7,7 +7,9 @@ export default function NotFound() {
       <SeoHead
         title="Page Not Found"
         description="Yeh page Tools Websites Directory par maujood nahi hai. Poori directory ya home page dekhein."
-        path="/sites"
+        path="/404"
+        noindex
+        canonical={false}
       />
       <div className="container section article">
         <h1>Page nahi mila</h1>

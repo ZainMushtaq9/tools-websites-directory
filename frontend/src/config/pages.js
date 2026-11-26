@@ -13,18 +13,47 @@ export const tierCount = (id) => sitesByTier(id).length;
 
 // Static pages: values mirror the <SeoHead> props and <h1> in each page
 // component (frontend/src/pages/*.jsx). Keep in sync with those files.
+// Per-tier SEO overrides: keyword-bearing titles/descriptions that
+// fit the 30-60 / 120-160 char bands. The template in STATIC_PAGES is
+// the fallback for any tier without an override.
+const TIER_SEO = {
+  a: {
+    title: "Tier A: Giants",
+    description: "Tier A giants — calculator.net, Omni Calculator aur baaki sab se badi calculator websites: 8 sites ka jaiza, Roman Urdu mein."
+  },
+  b: {
+    title: "Tier B: Generalists aur Solvers",
+    description: "Tier B generalists, converters aur solvers — MiniWebtool, RapidTables aur 18 free tools sites ka jaiza, Roman Urdu mein."
+  },
+  c: {
+    title: "Tier C: Asli Muqabla",
+    description: "Tier C 'all tools' sites — Toolsped, RupayaTools aur 34 sites ka muqabla: converters, PDF, finance aur health, Roman Urdu mein."
+  },
+  d: {
+    title: "Tier D: Pakistan Tools Websites",
+    description: "Tier D Pakistan sites — Pakistan tools websites: FBR tax, bijli bill, Zakat, CGPA aur MDCAT ki 8 sites, Roman Urdu mein."
+  },
+  e: {
+    title: "Tier E: Islamic Calculator Websites",
+    description: "Tier E Islamic finance — Zakat, Hijri, Qibla aur Islamic calculator websites — Zakat live nisab ke saath: 3 sites ka jaiza, Roman Urdu mein."
+  },
+  f: {
+    title: "Tier F: Farmer Tools",
+    description: "Tier F farmer tools — agriculture calculator websites: khad, beej, mandi aur fasal ki 7 sites — Pakistan aur India, Roman Urdu mein."
+  }
+};
 export const STATIC_PAGES = {
   "/": {
-    title: "60+ Tools Websites ka Mukammal Jaiza",
+    title: "78 Free Online Tools Websites",
     description:
-      "60+ tools websites ka mukammal jaiza — teeno bade findings, top 10 additions aur Tier A se F tak ki poori directory, Roman Urdu mein.",
-    h1: "60+ tools websites ka mukammal jaiza",
-    lede: "Yeh directory 60+ tools websites ko aik hi jagah par rakhti hai — kaunsi site kis tier mein hai, kya kami hai, aur nayi site ke liye kya mauqa hai."
+      "78 free online tools websites ki directory — calculator.net, Omni aur baaki behtareen sites ka jaiza, Pakistan tools websites samet, Roman Urdu mein.",
+    h1: "78 free online tools websites ki directory",
+    lede: "Yeh directory 78 tools websites ko aik hi jagah par rakhti hai — kaunsi site kis tier mein hai, kya kami hai, aur nayi site ke liye kya mauqa hai."
   },
   "/sites": {
     title: "Saari Tools Websites",
     description:
-      "60+ tools websites ki poori directory — har site ka tier, tools ki tadaad, focus aur notes. Tier se filter karein ya naam se search karein.",
+      "78 online calculator websites ki poori list — har site ka tier, tools ki tadaad, focus aur notes. Tier se filter karein ya naam se search karein.",
     h1: "Saari tools websites",
     lede: "Poori directory — har site ka tier, tools ki tadaad, focus aur notes. Filter ya search se apni matloba site dhoondhein."
   },
@@ -54,12 +83,12 @@ export const STATIC_PAGES = {
     description:
       "Tools Websites Directory kya hai, 26 Nov 2026 ki research report par kaise bana, tiers kaise kaam karte hain, aur disclaimer.",
     h1: "About — Tools Websites Directory",
-    lede: "Yeh directory 26 Nov 2026 ki research report par mabni hai — 60+ tools websites ka jaiza, tiers mein batna hua, Roman Urdu mein."
+    lede: "Yeh directory 26 Nov 2026 ki research report par mabni hai — 78 tools websites ka jaiza, tiers mein batna hua, Roman Urdu mein."
   },
   "/sources": {
     title: "Sources aur Notes",
     description:
-      "Is directory ke sources, jo details verify nahi hui hain, aur disclaimer — parhne se pehle yeh page zaroor dekh lein.",
+      "Is directory ke sources aur notes — kaun si details verify nahi hui hain, report ki limits aur disclaimer, parhne se pehle zaroor dekh lein.",
     h1: "Sources aur notes",
     lede: "Yeh directory kin sources par mabni hai, kya verify nahi hua, aur disclaimer — sab kuch yahan saaf likha hai."
   },
@@ -76,11 +105,12 @@ export const STATIC_PAGES = {
         f: "Farmer Tools"
       };
       const short = SHORT_TITLES[t.id] || t.name;
+      const override = TIER_SEO[t.id] || {};
       return [
         `/tiers/${t.id}`,
         {
-          title: `Tier ${t.letter}: ${short}`,
-          description: `Tier ${t.letter} (${t.name}) ki tools websites — ${sitesByTier(t.id).length} sites, takeaway aur har site ka focus, Roman Urdu mein.`,
+          title: override.title || `Tier ${t.letter}: ${short}`,
+          description: override.description || `Tier ${t.letter} (${t.name}) ki tools websites — ${sitesByTier(t.id).length} sites, takeaway aur har site ka focus, Roman Urdu mein.`,
           h1: `Tier ${t.letter} — ${t.name}`,
           lede: t.subtitle || t.takeaway || ""
         }
@@ -92,16 +122,17 @@ export const STATIC_PAGES = {
 // Every public URL, in sitemap order. The sitemap, route manifest,
 // prerender step and link validator all read this list.
 export const publicPages = [
-  { path: "/", changeFrequency: "daily", priority: 1.0 },
-  { path: "/sites", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/", changeFrequency: "daily", priority: 1.0, lastmod: "2026-11-26" },
+  { path: "/sites", changeFrequency: "weekly", priority: 0.9, lastmod: "2026-11-26" },
   ...(TIERS || []).map((t) => ({
     path: `/tiers/${t.id}`,
     changeFrequency: "weekly",
-    priority: 0.8
+    priority: 0.8,
+    lastmod: "2026-11-26"
   })),
-  { path: "/top-10", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/gaps", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/categories", changeFrequency: "monthly", priority: 0.8 },
-  { path: "/about", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/sources", changeFrequency: "monthly", priority: 0.6 }
+  { path: "/top-10", changeFrequency: "monthly", priority: 0.8, lastmod: "2026-11-26" },
+  { path: "/gaps", changeFrequency: "monthly", priority: 0.8, lastmod: "2026-11-26" },
+  { path: "/categories", changeFrequency: "monthly", priority: 0.8, lastmod: "2026-11-26" },
+  { path: "/about", changeFrequency: "monthly", priority: 0.6, lastmod: "2026-11-26" },
+  { path: "/sources", changeFrequency: "monthly", priority: 0.6, lastmod: "2026-11-26" }
 ];

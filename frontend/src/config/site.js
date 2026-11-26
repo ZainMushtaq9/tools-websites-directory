@@ -2,7 +2,7 @@
 // no custom domain is planned for this site.
 export const SITE_URL = "https://tools-websites-directory.pages.dev";
 export const SITE_NAME = "Tools Websites Directory";
-export const SITE_TAGLINE = "60+ tools websites ka mukammal jaiza";
+export const SITE_TAGLINE = "78 tools websites ka mukammal jaiza";
 export const CONTACT_EMAIL = "zainmushtaq5439@gmail.com";
 export const AUTHOR_NAME = "Muhammad Zain Mushtaq";
 export const AUTHOR_BIO =

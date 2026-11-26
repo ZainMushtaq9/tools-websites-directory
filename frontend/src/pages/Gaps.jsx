@@ -3,7 +3,8 @@ import SeoHead from "../components/SeoHead.jsx";
 import Breadcrumb from "../components/Breadcrumb.jsx";
 import { STATIC_PAGES } from "../config/pages.js";
 import { GAP_TEXT, FEATURE_GAPS, EARNING_MODELS, EMPTY_NICHES } from "../config/sites-data.js";
-import { breadcrumbJsonLd, webPageJsonLd } from "../config/seo.js";
+import { GAPS_FAQS } from "../config/faqs.js";
+import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd } from "../config/seo.js";
 
 export default function Gaps() {
   const meta = STATIC_PAGES["/gaps"];
@@ -19,7 +20,8 @@ export default function Gaps() {
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "Gaps", path: "/gaps" }
-          ])
+          ]),
+          faqJsonLd(GAPS_FAQS)
         ]}
       />
       <div className="container section article">
@@ -68,6 +70,14 @@ export default function Gaps() {
             </li>
           ))}
         </ul>
+
+        <h2>Aam sawalat</h2>
+        {GAPS_FAQS.map((f) => (
+          <div className="faq" key={f.q}>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
 
         <p className="answer">
           <strong>Race ab tadaad ki nahi — race zabaan, jagah aur bharose ki hai.</strong>

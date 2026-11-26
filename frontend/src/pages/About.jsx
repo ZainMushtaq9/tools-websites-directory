@@ -9,7 +9,7 @@ import { breadcrumbJsonLd, webPageJsonLd, faqJsonLd } from "../config/seo.js";
 const FAQS = [
   {
     q: "Yeh directory kya hai?",
-    a: "Yeh 60+ tools websites ka aik jaiza hai — har site ka tier, tools ki tadaad, focus aur notes, Roman Urdu mein, aik hi jagah par."
+    a: "Yeh 78 tools websites ka aik jaiza hai — har site ka tier, tools ki tadaad, focus aur notes, Roman Urdu mein, aik hi jagah par."
   },
   {
     q: "Tiers kaise kaam karte hain?",
@@ -49,7 +49,7 @@ export default function About() {
         <h2>Yeh directory kya hai</h2>
         <p>
           Tools Websites Directory {RESEARCH_DATE} ki research report par mabni hai. Us report
-          mein {stats.sites || "60+"} tools websites ka jaiza liya gaya — {stats.entries || ""}{" "}
+          mein {stats.sites || "78"} tools websites ka jaiza liya gaya — {stats.entries || ""}{" "}
           entries, {stats.tiers || 6} tiers mein bati hui. Har site ke liye us ka tier, tools ki
           tadaad, focus, zabaan aur notes diye gaye hain.
         </p>

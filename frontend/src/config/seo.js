@@ -1,5 +1,10 @@
 import { SITE_URL, SITE_NAME, AUTHOR_NAME } from "./site.js";
 
+// Shared social-share image (1200x630 render, 2192x1152 actual).
+export const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+export const OG_IMAGE_WIDTH = 2192;
+export const OG_IMAGE_HEIGHT = 1152;
+
 export function pageMeta({ title, description, path, type = "website" }) {
   const url = `${SITE_URL}${path}`;
   return {
@@ -70,7 +75,7 @@ export function websiteJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "60+ tools websites ka mukammal jaiza — tiers, top 10 additions, gaps aur categories, Roman Urdu mein."
+      "78 tools websites ka mukammal jaiza — tiers, top 10 additions, gaps aur categories, Roman Urdu mein."
   };
 }
 
@@ -81,6 +86,6 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "Tools Websites Directory — 60+ tools websites ka mukammal jaiza."
+      "Tools Websites Directory — 78 tools websites ka mukammal jaiza."
   };
 }

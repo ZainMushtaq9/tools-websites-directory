@@ -3,7 +3,8 @@ import SeoHead from "../components/SeoHead.jsx";
 import Breadcrumb from "../components/Breadcrumb.jsx";
 import { STATIC_PAGES } from "../config/pages.js";
 import { TOP10 } from "../config/sites-data.js";
-import { breadcrumbJsonLd, webPageJsonLd } from "../config/seo.js";
+import { TOP10_FAQS } from "../config/faqs.js";
+import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd } from "../config/seo.js";
 
 export default function Top10() {
   const meta = STATIC_PAGES["/top-10"];
@@ -18,7 +19,8 @@ export default function Top10() {
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
             { name: "Top 10", path: "/top-10" }
-          ])
+          ]),
+          faqJsonLd(TOP10_FAQS)
         ]}
       />
       <div className="container section article">
@@ -32,6 +34,13 @@ export default function Top10() {
             </h2>
             <p>{t.text}</p>
           </section>
+        ))}
+        <h2>Aam sawalat</h2>
+        {TOP10_FAQS.map((f) => (
+          <div className="faq" key={f.q}>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
         ))}
         <p className="answer">
           <strong>Order yaad rakho:</strong> pehle zabaan, phir jagah, phir features.

@@ -4,7 +4,8 @@ import SeoHead from "../components/SeoHead.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import { STATIC_PAGES, TIERS, tierCount } from "../config/pages.js";
 import { SITE_STATS, FINDINGS, TOP10, SITES } from "../config/sites-data.js";
-import { websiteJsonLd, organizationJsonLd, webPageJsonLd } from "../config/seo.js";
+import { HOME_FAQS } from "../config/faqs.js";
+import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd } from "../config/seo.js";
 
 export default function Home() {
   const meta = STATIC_PAGES["/"];
@@ -18,7 +19,7 @@ export default function Home() {
         title={meta.title}
         description={meta.description}
         path="/"
-        jsonLd={[websiteJsonLd(), organizationJsonLd(), webPageJsonLd({ title: meta.title, description: meta.description, path: "/" })]}
+        jsonLd={[webPageJsonLd({ title: meta.title, description: meta.description, path: "/" }), breadcrumbJsonLd([{ name: "Home", path: "/" }]), faqJsonLd(HOME_FAQS)]}
       />
       <section className="hero">
         <div className="container">
@@ -37,12 +38,19 @@ export default function Home() {
             <Link className="button" to="/sites">Poori directory dekhein</Link>{" "}
             <Link className="button button-secondary" to="/top-10">Top 10 additions</Link>
           </p>
+          <img
+            src={`${import.meta.env.BASE_URL}og-image.jpg`}
+            alt="Tools Websites Directory — 78 tools websites ki directory, tiers A se F tak"
+            width="2192"
+            height="1152"
+            style={{ maxWidth: "100%", height: "auto", borderRadius: 8, marginTop: 16 }}
+          />
         </div>
       </section>
       <div className="container section">
         <div className="stats-strip" role="list">
           <div role="listitem"><strong>{stats.sites}</strong><span>sites</span></div>
-          <div role="listitem"><strong>{stats.entries}</strong><span>entries</span></div>
+          <div role="listitem"><strong>{stats.entries}</strong><span>report entries</span></div>
           <div role="listitem"><strong>{stats.tiers}</strong><span>tiers</span></div>
           <div role="listitem"><strong>{stats.researchDate}</strong><span>research date</span></div>
         </div>
@@ -98,6 +106,14 @@ export default function Home() {
           <Link to="/gaps">Gaps aur khali jagah →</Link> ·{" "}
           <Link to="/categories">Categories ka jaiza →</Link>
         </p>
+
+        <h2>Aam sawalat</h2>
+        {HOME_FAQS.map((f) => (
+          <div className="faq" key={f.q}>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
       </div>
     </>
   );

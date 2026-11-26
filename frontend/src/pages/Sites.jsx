@@ -6,7 +6,8 @@ import SearchBar from "../components/SearchBar.jsx";
 import SiteCard from "../components/SiteCard.jsx";
 import { STATIC_PAGES, TIERS } from "../config/pages.js";
 import { SITES } from "../config/sites-data.js";
-import { breadcrumbJsonLd, webPageJsonLd, itemListJsonLd } from "../config/seo.js";
+import { SITES_FAQS } from "../config/faqs.js";
+import { breadcrumbJsonLd, faqJsonLd, webPageJsonLd, itemListJsonLd } from "../config/seo.js";
 
 const TIER_ORDER = ["a", "b", "c", "d", "e", "f"];
 
@@ -58,7 +59,8 @@ export default function Sites() {
           itemListJsonLd(
             "Tools Websites Directory",
             filtered.map((s) => ({ name: s.name, url: s.url }))
-          )
+          ),
+          faqJsonLd(SITES_FAQS)
         ]}
       />
       <div className="container section">
@@ -97,6 +99,7 @@ export default function Sites() {
           {tierFilter !== "all" ? ` — Tier ${tierFilter.toUpperCase()}` : ""}
           {q ? ` — “${q}” ke liye` : ""}
         </p>
+        <h2>Poori directory — tier ke hisaab se</h2>
         {filtered.length === 0 ? (
           <p>
             Koi site nahi mili. Filter badlein ya <Link to="/sites">saari sites</Link> dekhein.
@@ -108,6 +111,13 @@ export default function Sites() {
             ))}
           </div>
         )}
+        <h2>Aam sawalat</h2>
+        {SITES_FAQS.map((f) => (
+          <div className="faq" key={f.q}>
+            <h3>{f.q}</h3>
+            <p>{f.a}</p>
+          </div>
+        ))}
       </div>
     </>
   );

@@ -1,24 +1,24 @@
 # Tools Websites Directory
 
-> 60+ tools websites ka mukammal jaiza
-> A directory of 60+ tools websites, reviewed in Roman Urdu. Research date: 26 Nov 2026. Author: Muhammad Zain Mushtaq.
+> 78 tools websites ka mukammal jaiza
+> A directory of 78 tools websites, reviewed in Roman Urdu. Research date: 26 Nov 2026. Author: Muhammad Zain Mushtaq.
 > Contact: zainmushtaq5439@gmail.com
 
 ## Key pages
 
-- [60+ Tools Websites ka Mukammal Jaiza](https://tools-websites-directory.pages.dev/): 60+ tools websites ka mukammal jaiza — teeno bade findings, top 10 additions aur Tier A se F tak ki poori directory, Roman Urdu mein.
-- [Saari Tools Websites](https://tools-websites-directory.pages.dev/sites): 60+ tools websites ki poori directory — har site ka tier, tools ki tadaad, focus aur notes. Tier se filter karein ya naam se search karein.
-- [Tier A: Giants](https://tools-websites-directory.pages.dev/tiers/a): Tier A (Sab Se Badi Sites) ki tools websites — 8 sites, takeaway aur har site ka focus, Roman Urdu mein.
-- [Tier B: Generalists aur Solvers](https://tools-websites-directory.pages.dev/tiers/b): Tier B (Bare Generalists, Converters aur Solvers) ki tools websites — 18 sites, takeaway aur har site ka focus, Roman Urdu mein.
-- [Tier C: Asli Muqabla](https://tools-websites-directory.pages.dev/tiers/c): Tier C ('All Tools' Sites) ki tools websites — 34 sites, takeaway aur har site ka focus, Roman Urdu mein.
-- [Tier D: Pakistan Sites](https://tools-websites-directory.pages.dev/tiers/d): Tier D (Pakistan-Specific Sites) ki tools websites — 8 sites, takeaway aur har site ka focus, Roman Urdu mein.
-- [Tier E: Islamic Finance](https://tools-websites-directory.pages.dev/tiers/e): Tier E (Islamic Finance / Islamic Life) ki tools websites — 3 sites, takeaway aur har site ka focus, Roman Urdu mein.
-- [Tier F: Farmer Tools](https://tools-websites-directory.pages.dev/tiers/f): Tier F (Agriculture / Farmer Tools) ki tools websites — 7 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [78 Free Online Tools Websites](https://tools-websites-directory.pages.dev/): 78 free online tools websites ki directory — calculator.net, Omni aur baaki behtareen sites ka jaiza, Pakistan tools websites samet, Roman Urdu mein.
+- [Saari Tools Websites](https://tools-websites-directory.pages.dev/sites): 78 online calculator websites ki poori list — har site ka tier, tools ki tadaad, focus aur notes. Tier se filter karein ya naam se search karein.
+- [Tier A: Giants](https://tools-websites-directory.pages.dev/tiers/a): Tier A giants — calculator.net, Omni Calculator aur baaki sab se badi calculator websites: 8 sites ka jaiza, Roman Urdu mein.
+- [Tier B: Generalists aur Solvers](https://tools-websites-directory.pages.dev/tiers/b): Tier B generalists, converters aur solvers — MiniWebtool, RapidTables aur 18 free tools sites ka jaiza, Roman Urdu mein.
+- [Tier C: Asli Muqabla](https://tools-websites-directory.pages.dev/tiers/c): Tier C 'all tools' sites — Toolsped, RupayaTools aur 34 sites ka muqabla: converters, PDF, finance aur health, Roman Urdu mein.
+- [Tier D: Pakistan Tools Websites](https://tools-websites-directory.pages.dev/tiers/d): Tier D Pakistan sites — Pakistan tools websites: FBR tax, bijli bill, Zakat, CGPA aur MDCAT ki 8 sites, Roman Urdu mein.
+- [Tier E: Islamic Calculator Websites](https://tools-websites-directory.pages.dev/tiers/e): Tier E Islamic finance — Zakat, Hijri, Qibla aur Islamic calculator websites — Zakat live nisab ke saath: 3 sites ka jaiza, Roman Urdu mein.
+- [Tier F: Farmer Tools](https://tools-websites-directory.pages.dev/tiers/f): Tier F farmer tools — agriculture calculator websites: khad, beej, mandi aur fasal ki 7 sites — Pakistan aur India, Roman Urdu mein.
 - [Top 10 Additions](https://tools-websites-directory.pages.dev/top-10): 10 additions jo is directory ko behtar bana sakti hain — pehle zabaan, phir jagah, phir features. Har addition ki tafseel Roman Urdu mein.
 - [Gaps aur Khali Jagah](https://tools-websites-directory.pages.dev/gaps): Tools websites mein kya kami hai — zabaan, Pakistan aur features ke gaps, earning models aur khali niches, aik hi jagah par.
 - [Categories ka Jaiza](https://tools-websites-directory.pages.dev/categories): Har category mein kis ki coverage sab se achhi hai aur kahan kami hai — aik saaf table mein tools websites ka category-wise jaiza.
 - [About](https://tools-websites-directory.pages.dev/about): Tools Websites Directory kya hai, 26 Nov 2026 ki research report par kaise bana, tiers kaise kaam karte hain, aur disclaimer.
-- [Sources aur Notes](https://tools-websites-directory.pages.dev/sources): Is directory ke sources, jo details verify nahi hui hain, aur disclaimer — parhne se pehle yeh page zaroor dekh lein.
+- [Sources aur Notes](https://tools-websites-directory.pages.dev/sources): Is directory ke sources aur notes — kaun si details verify nahi hui hain, report ki limits aur disclaimer, parhne se pehle zaroor dekh lein.
 
 ## Findings
 
