@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Tools Websites Directory — 60+ tools websites ka mukammal jaiza. Tiers, top 10 additions, gaps aur categories, Roman Urdu mein, 26 Nov 2026 ki research ke saath." />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      // Set the theme before first paint to avoid a light/dark flash.
+      // A saved choice wins; the default is light.
+      try {
+        var t = localStorage.getItem("twd-theme");
+        if (t !== "dark" && t !== "light") t = "light";
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    </script>
+    <!-- Site-wide structured data, static so crawlers see it without
+         JavaScript. Per-page JSON-LD (breadcrumbs, FAQPage, ItemList)
+         is injected by the prerender step and client-side by SeoHead. -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"WebSite","name":"Tools Websites Directory","url":"https://tools-websites-directory.pages.dev","description":"60+ tools websites ka mukammal jaiza — tiers, top 10 additions, gaps aur categories, Roman Urdu mein."}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Organization","name":"Tools Websites Directory","url":"https://tools-websites-directory.pages.dev","description":"Tools Websites Directory — 60+ tools websites ka mukammal jaiza."}
+    </script>
+    <title>Tools Websites Directory — 60+ Tools Websites ka Mukammal Jaiza</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

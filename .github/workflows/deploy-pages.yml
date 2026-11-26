@@ -1,0 +1,66 @@
+# Deploy the Tools Websites Directory frontend to GitHub Pages.
+# Builds the Vite app with the project subpath (/tools-websites-directory/)
+# so routing and assets work on the Pages project URL, then publishes
+# frontend/dist. Mirrors creator-toolbox's deploy-pages.yml.
+# Cloudflare Pages is NOT affected: it builds with no PAGES_BASE_PATH,
+# so its base stays "/" and it keeps serving the root URL.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install frontend dependencies
+        run: npm --prefix frontend ci
+      - name: Validate metadata and links
+        run: npm run validate
+      - name: Build frontend for the Pages subpath
+        run: npm --prefix frontend run build
+        env:
+          PAGES_BASE_PATH: /tools-websites-directory/
+      # Build already chains prerender; this explicit step is a belt-and-
+      # braces re-run (idempotent) so a future build-script change can
+      # never silently ship un-prerendered pages again. Prerender writes
+      # a real static HTML file for every sitemap URL so GitHub Pages
+      # serves HTTP 200 instead of the SPA 404 fallback.
+      - name: Prerender static pages for GitHub Pages
+        run: npm --prefix frontend run prerender
+        env:
+          PAGES_BASE_PATH: /tools-websites-directory/
+      - name: Add SPA fallback and disable Jekyll
+        run: cp frontend/dist/index.html frontend/dist/404.html && touch frontend/dist/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: frontend/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

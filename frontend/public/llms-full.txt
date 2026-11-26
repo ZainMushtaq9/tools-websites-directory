@@ -1,0 +1,948 @@
+# Tools Websites Directory — Full Directory
+
+> 60+ tools websites ka mukammal jaiza
+> Research date: 26 Nov 2026
+
+# Tools Websites Directory
+
+> 60+ tools websites ka mukammal jaiza
+> A directory of 60+ tools websites, reviewed in Roman Urdu. Research date: 26 Nov 2026. Author: Muhammad Zain Mushtaq.
+> Contact: zainmushtaq5439@gmail.com
+
+## Key pages
+
+- [60+ Tools Websites ka Mukammal Jaiza](https://tools-websites-directory.pages.dev/): 60+ tools websites ka mukammal jaiza — teeno bade findings, top 10 additions aur Tier A se F tak ki poori directory, Roman Urdu mein.
+- [Saari Tools Websites](https://tools-websites-directory.pages.dev/sites): 60+ tools websites ki poori directory — har site ka tier, tools ki tadaad, focus aur notes. Tier se filter karein ya naam se search karein.
+- [Tier A: Giants](https://tools-websites-directory.pages.dev/tiers/a): Tier A (Sab Se Badi Sites) ki tools websites — 8 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [Tier B: Generalists aur Solvers](https://tools-websites-directory.pages.dev/tiers/b): Tier B (Bare Generalists, Converters aur Solvers) ki tools websites — 18 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [Tier C: Asli Muqabla](https://tools-websites-directory.pages.dev/tiers/c): Tier C ('All Tools' Sites) ki tools websites — 34 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [Tier D: Pakistan Sites](https://tools-websites-directory.pages.dev/tiers/d): Tier D (Pakistan-Specific Sites) ki tools websites — 8 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [Tier E: Islamic Finance](https://tools-websites-directory.pages.dev/tiers/e): Tier E (Islamic Finance / Islamic Life) ki tools websites — 3 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [Tier F: Farmer Tools](https://tools-websites-directory.pages.dev/tiers/f): Tier F (Agriculture / Farmer Tools) ki tools websites — 7 sites, takeaway aur har site ka focus, Roman Urdu mein.
+- [Top 10 Additions](https://tools-websites-directory.pages.dev/top-10): 10 additions jo is directory ko behtar bana sakti hain — pehle zabaan, phir jagah, phir features. Har addition ki tafseel Roman Urdu mein.
+- [Gaps aur Khali Jagah](https://tools-websites-directory.pages.dev/gaps): Tools websites mein kya kami hai — zabaan, Pakistan aur features ke gaps, earning models aur khali niches, aik hi jagah par.
+- [Categories ka Jaiza](https://tools-websites-directory.pages.dev/categories): Har category mein kis ki coverage sab se achhi hai aur kahan kami hai — aik saaf table mein tools websites ka category-wise jaiza.
+- [About](https://tools-websites-directory.pages.dev/about): Tools Websites Directory kya hai, 26 Nov 2026 ki research report par kaise bana, tiers kaise kaam karte hain, aur disclaimer.
+- [Sources aur Notes](https://tools-websites-directory.pages.dev/sources): Is directory ke sources, jo details verify nahi hui hain, aur disclaimer — parhne se pehle yeh page zaroor dekh lein.
+
+## Findings
+
+1. Urdu kahin nahi hai: Omni ke 3,938 tools aur calculator.net ke ~200 tools — dono sirf English mein hain. Full Urdu interface sirf chhoti sites par hai, 50 tools se kam wali.
+
+2. Pakistan ke tools kahin nahi hain: FBR tax, Zakat, bijli ka bill, tola aur marla kisi badi site par nahi. India ki RupayaTools (874+ tools) ye kaam kar chuki hai; Pakistan ki koi bari site abhi nahi hai — specialists sirf 7 se 48 tools ke hain.
+
+3. Features ya missing hain ya paisay mein band: Free step-by-step, PDF export, dark mode aur offline mode badi sites par nahi hain — Wolfram, Symbolab aur Mathway steps ke liye ~$5-10/month lete hain. Apne liye matlab: 54 tools wali site catalogue ke size par nahi jeet sakti (Omni 73 guna bara hai). Jeet in teen cheezon se hogi — full Urdu interface, har budget ke saath update hone wala Pakistan cluster, aur har tool par free steps + PDF/WhatsApp share.
+
+## Tiers
+
+### Tier A — Sab Se Badi Sites
+
+Saari English, saari US-centric, ads par chalti hain. Urdu, Pakistan tools, dark mode, offline — in mein se kuch bhi in ke paas nahi.
+
+- [calculator.net](https://calculator.net): ~200 tools. Finance, fitness/health, math, age, date, GPA, subnet, password AdSense. SimilarWeb: 40.3M visits/mo; SEMrush: 77.32M — estimators mukhtalif, range hi samjho
+- [Omni Calculator](https://omnicalculator.com): 3,938 (live verify) tools. Sab kuch: Math 687, Finance 618, Physics 546, Health 440, Conversion 330; lambi wazahat aur formulas ~10-11M visits/mo (estimate). Embed ke liye application + logo/link-back lazmi
+- [Calculator Soup](https://calculatorsoup.com): ~480 tools. Math, statistics, geometry, fractions, science; kai tools mein darmiyani steps AdSense
+- [Inch Calculator](https://inchcalculator.com): 3,500+ tools. Math/science, construction, electrical, health, finance, automotive; mobile apps bhi calculator.net/Omni ke top-3 competitors mein
+- [Good Calculators](https://goodcalculators.com): 360+ (24 categories) tools. Salary/income tax (US+UK), mortgage, retirement, statistics, engineering, HRM Ezoic ads — pura model advertising par (UK, 2015 se)
+- [Calculator-Online.net](https://calculator-online.net): ~350 tools. Math, algebra, percentage, fractions, statistics, conversions, finance Ads page par nahi mile
+- [The Calculator Site](https://thecalculatorsite.com): 250+ tools. Finance, health, cooking, math, construction, education, astrology Apni site ke mutabiq "funded by advertising"
+- [GigaCalculator](https://gigacalculator.com): n/v tools. Finance, business, health, date/time, math, geometry; citations (BibTeX/IEEE) ki sahulat Traffic n/v; tool count verify nahi ho saka
+
+### Tier B — Bare Generalists, Converters aur Solvers
+
+API aur embed hi wahid cheezein hain jo backlinks laati hain — wo sirf MiniWebtool ke paas theek se hain. Steps ki paywall hi free site ka sab se bara mauqa hai.
+
+- [MiniWebtool](https://miniwebtool.com): 2,022 tools. Math 464, Financial 314, Text 150, randomness, health, time/date, webmaster, hash 1,080 tools ki REST API + MCP server — API wali akeli site
+- [RapidTables](https://rapidtables.com): ~130 + 300 conv. tools. Math, conversion, electrical, reference tables (wire gauge, resistor, ASCII) Taqreeban no-JS — sab se tez
+- [Calculator.io](https://calculator.io): ~60 tools. Fitness, science, math, finance, health AdSense
+- [ConvertUnits](https://convertunits.com): n/v tools. Sirf unit conversion, metric tables, SI Tool count verify nahi ho saka (n/v)
+- [PlanetCalc](https://planetcalc.com): n/v (bara) tools. User ke banaye calculators: engineering, maths, calendars (Hindu/Indian bhi) Tool count verify nahi ho saka (n/v)
+- [Time and Date](https://timeanddate.com): Date/time only tools. Date duration, calendars, time zones, countdowns
+- [Desmos](https://desmos.com): Thode, gehre tools. Graphing, geometry, algebra, statistics — classroom maths Free
+- [GeoGebra](https://geogebra.org): Thode, gehre tools. Graphing, geometry, algebra, statistics — classroom maths Free; save ke liye account chahiye
+- [Wolfram Alpha](https://wolframalpha.com): Engine tools. Maths, science, finance, history — computational knowledge engine Freemium: steps free nahi; Pro $9.99/mo ya $5/mo (saalana)
+- [Symbolab](https://symbolab.com): Solver tools. Algebra, trig, calculus, matrices — step-by-step maths Pro ~$9.95/mo
+- [Mathway](https://mathway.com): 59+ tools. Algebra/calculus solver Full steps ~$9.99/mo
+- [Photomath](https://photomath.com): 59+ / camera tools. Algebra/calculus solver; camera se sawal parhta hai Photomath Plus $9.99/mo
+- [Calculatored](https://calculatored.com): n/v tools. General aur maths calculators Group entry (Calculatored, EasyCalculation, Calculator.com, Ncalculators, eMathHelp, HackMath); tool counts verify nahi hue (n/v)
+- [EasyCalculation](https://easycalculation.com): n/v tools. General aur maths calculators Group entry; tool count verify nahi ho saka (n/v)
+- [Calculator.com](https://calculator.com): n/v tools. General aur maths calculators ~284K visits/mo (estimate); group entry, tool count n/v
+- [Ncalculators](https://ncalculators.com): n/v tools. General aur maths calculators; step-by-step maths Group entry; tool count verify nahi ho saka (n/v)
+- [eMathHelp](https://emathhelp.com): n/v tools. General aur maths calculators; step-by-step maths Group entry; tool count verify nahi ho saka (n/v)
+- [HackMath](https://hackmath.net): n/v tools. General aur maths calculators Group entry; tool count verify nahi ho saka (n/v)
+
+### Tier C — 'All Tools' Sites
+
+Nov 2026 mein nayi sites ki aik lehar aayi hai — Toolsped, RupayaTools, SumKitTool, CalculateItNow, CalculatorApp.me — lekin taqreeban sab wohi English/US catalogue copy kar rahi hain. Jo do sites alag hain, un ki wajah tadaad nahi hai: CalculatorApp.me features ki wajah se (PDF, dark mode, offline) aur ToolsBuilt zabaan ki wajah se (Urdu).
+
+- [Toolsped](https://toolsped.com): 857 (live verify) tools. Converters 248, Generators/Text 142, Finance 126, Home 107, Math 90, PDF 62, Health/Education 80 Urdu Keyboard, Hijri converter, Prayer Time, Qibla — lekin ye tools hain, UI English hai. Free, no sign-up
+- [RupayaTools](https://rupayatools.com): 874+ tools. India-focused: salary, EMI, income tax, CGPA, FD, cement/construction, PDF Nov 2026 launch. Pakistan ke liye yehi model copy karne wala hai
+- [Calculators Daily](https://calculatorsdaily.com): 1,007 tools. General, 30+ categories Free
+- [Muxtly](https://muxtly.com): 300+ tools. Finance, health, file conversion; privacy-first, 100% browser mein Free, no sign-up
+- [TinyWow](https://tinywow.com): 250+ tools. PDF, image, video, AI writing, text, code tools Free, no sign-up
+- [10015.io](https://10015.io): 300+ tools. PDF, image, video, AI writing, text, code tools Free, no sign-up
+- [iLovePDF](https://ilovepdf.com): Bara PDF set tools. Merge, split, compress, convert, OCR, sign Freemium: free limits, Premium ~$4-9/mo. Files upload hoti hain — privacy gap yahin hai
+- [Smallpdf](https://smallpdf.com): 30+ tools. Merge, split, compress, convert, OCR, sign Freemium: free limits, Premium ~$4-9/mo. Files upload hoti hain — privacy gap yahin hai
+- [PDF24](https://pdf24.org): PDF+image tools. Merge, split, compress, convert, OCR, sign Freemium / ads; files upload hoti hain — privacy gap yahin hai
+- [CalculatorApp.me](https://calculatorapp.me): 150+ tools. Finance, health, maths, tax (US/UK/CA/AU/IN) Sab se feature-complete chhoti site: PDF export, dark mode, PWA/offline, embed, local history, voice input — sab free
+- [CalculateItNow](https://calculateitnow.com): 413 tools. General + generated date/conversion/tax pages Instant embed — koi form/approval nahi. Sep 2026 launch
+- [Calculators Planet](https://calculatorsplanet.com): 382+ tools. Financial, math, health, everyday; formulas established standards se Free, no sign-up
+- [SumKitTool](https://sumkittool.com): 331+ tools. Finance 145, math 70, text, health, home, dev; US/UK/CA/AU salary+tax Har tool par formula + worked example + sources. Founder Sargodha, Pakistan se
+- [calculate.at](https://calculate.at): 290+ tools. Finance, health, math, construction; mortgage, EMI, tax, retirement/FIRE, solar ROI Free, ad-supported / no sign-up
+- [Calculator4U](https://calculator4u.com): 185+ tools. Finance, health, math, construction; mortgage, EMI, tax, retirement/FIRE, solar ROI Free, ad-supported / no sign-up
+- [Miryori](https://miryori.org): 29 tools. Salary/pay, loans, interest, PTO, health, utility Adsterra ads
+- [ToolsBuilt](https://toolsbuilt.com): 50 tools. Finance/maths, dates; FBR salary tax, matric/FSc/university marks; PKR default Koi ads nahi, GitHub Pages par
+- [CalculatorBaba](https://calculatorbaba.com): 29 tools. Health, money, math, study, daily life; tola/marla/kanal Free, browser mein
+- [CyberChef](https://cyberchef.org): Dev set tools. Developer utilities: data recipes, text, encoding Free / open source, self-host ho sakta hai
+- [IT Tools](https://it-tools.tech): Dev set tools. Developer utilities: data recipes, text, encoding Free / open source, self-host ho sakta hai
+- [Sejda](https://sejda.com): PDF set tools. PDF edit/convert Freemium; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+- [PDFgear](https://pdfgear.com): PDF set tools. PDF edit/convert Free; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+- [PDF Candy](https://pdfcandy.com): PDF set tools. PDF edit/convert Free; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+- [Stirling-PDF](https://stirlingpdf.com): 60+ tools. PDF edit/convert; 60+ tools, open source Open source; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+- [Vanta Calc](https://vantacalc.com): n/v tools. General + niche: LLM API cost calculator (110+ models, data 23 Nov 2026 refresh), stats, GPA AI-era calculators — 2026 ka naya niche
+- [Calciro](https://calciro.com): Chhote sets tools. Finance/health/math Free/freemium, no sign-up; group entry (Calciro, Calculora, SolveIndex, ZFinPro, Kinced, fixmint, The Mighty Calculator, ROIStack)
+- [Calculora](https://calculora.com): Chhote sets tools. Finance/health/math Free/freemium, no sign-up; group entry
+- [SolveIndex](https://solveindex.com): Chhote sets tools. Finance/health/math; business/SaaS metrics Free/freemium, no sign-up; group entry
+- [ZFinPro](https://zfinpro.com): Chhote sets tools. Finance/health/math Free/freemium, no sign-up; group entry
+- [Kinced](https://kinced.com): Chhote sets tools. Finance/health/math Free/freemium, no sign-up; group entry
+- [fixmint](https://fixmint.com): Chhote sets tools. Finance/health/math Free/freemium, no sign-up; group entry
+- [The Mighty Calculator](https://themightycalculator.com): 38 tools. Finance/health/math Free/freemium, no sign-up; group entry
+- [ROIStack](https://roistack.com): 38+ tools. Finance/health/math; AI-ROI 38+ Free/freemium, no sign-up; group entry
+- [SudoTool](https://sudotool.com): n/v tools. Finance, mortgage, dev, date tools Free, koi upload nahi
+
+### Tier D — Pakistan-Specific Sites
+
+Gap, chhoti soorat mein — specialists sirf 7 se 48 tools ke hain; Pakistan ka bara equivalent abhi bana hi nahi.
+
+- [HissabAI](https://hissabai.com): 20 tools. FBR 2026-27 salary tax, freelancer tax, GST, bijli bill (NEPRA Feb 2026), Zakat (aaj ka nisab), committees, PSX dividends, PKR inflation WhatsApp tracker EN / Roman Urdu / Urdu mein
+- [PKTaxCalc](https://pktaxcalc.com): 10 tools. Income/salary tax slab-by-slab working ke saath, Zakat, gold/silver Zakat tola mein, vehicle/token tax Finance Act 2026; Rs 600k tak tax-free
+- [ToolsFluent](https://toolsfluent.com): 7 tools. Income tax old-vs-new, freelancer (PSEB 0.25%), Zakat nisab Rs 503,529, GST 18%, Punjab token tax, property transfer 236K/236C Tax tools (ToolsFluent tax)
+- [PakDar](https://pakdar.com): 48+ tools. MDCAT (PMDC 10/40/50), NUST/GIKI/PIEAS/UET/COMSATS aggregates, FBR salary tax, bijli bill, EN-Urdu/Arabic/Roman-Urdu translators Sab client-side
+- [The Pakistan Edition](https://thepakistanedition.com): ~6+ tools. FBR salary tax 2026-27, bijli (NEPRA July 2025), Zakat (nisab Rs 503,529), PTA/DIRBS mobile tax, property tax
+- [Haadi Associates](https://haadiassociates.com): 8 tools. Salary/business/rental tax, late-filing penalty, GST, Zakat, WHT finder Tax consultants ke checked
+- [Ghulmil](https://ghulmil.net): n/v tools. Urdu keyboard, Roman to Urdu, namaz (Hanafi/Jafria), Zakat/Khums, Hijri, gold tola, salary tax, Desi months Urdu-first site
+- [DigitalSpot](https://digitalspot.com): n/v tools. EMI, discount waghera Pura interface EN se Urdu switch ho jata hai
+
+### Tier E — Islamic Finance / Islamic Life
+
+Ilm Tools (70 tools) sirf English hai aur us ka nisab figure purana hai (Rs 252,000); Urdu Islamic tools sirf Ghulmil par hain.
+
+- [Ilm Tools](https://ilm-tools.netlify.app/): 70 tools. Zakat (cash/gold/silver/business/shares), prayer times, Qibla, Hijri, Ramadan/Eid countdowns, Tasbih, 99 Names, Hajj/Umrah checklists Nisab figure Rs 252,000 purana hai
+- [IslamicTool](https://islamictool.com): 28 tools. Prayer, Qibla, Hijri, Zakat + live nisab, inheritance (Faraid), Murabaha calculator, 99 Names, duas
+- [IslamicInfo](https://islamicinfo.org): 12+ tools. Prayer, Qibla, Hijri, Zakat (live nisab), inheritance, Tasbeeh
+
+### Tier F — Agriculture / Farmer Tools
+
+Kisi bare generalist (Omni, calculator.net, Soup) ka agriculture section hi nahi hai. Omni ke sab se qareeb Food (71) aur Ecology (34) hain.
+
+- [FertDose](https://fertdose.com): n/v tools. NPK dose per acre/kanal/marla/hectare, crop library, planting calendar Har step aur source ke saath (Pakistan)
+- [VIPTools.pk](https://viptools.pk): ~6 tools tools. Urea/DAP/SOP bags, yield/profit maunds/acre mein, tube-well bijli, beej, livestock Pakistan
+- [OfficeCalculator](https://officecalculator.com): n/v tools. Crop workspace (Punjab crop calendar ke saath) Pakistan
+- [TechnicalKisan](https://technicalkisan.com): n/v tools. 9 faslon ki khad, seed rate 27 faslein, mandi prices India
+- [Toolvala](https://www.toolvala.in/): 18 tools. Agriculture tools India
+- [Fibub](https://fibub.com): 22 tools. Agriculture tools General
+- [1001.tools](https://1001.tools): n/v tools. Agriculture tools General
+
+## Top 10 additions
+
+1. Full Urdu interface (+ Roman Urdu toggle) har tool par: 50 se zyada tools wali kisi site ke paas nahi hai. Ye Omni aur calculator.net ke khilaf sab se bara moat hai.
+
+2. Pakistan cluster, har budget ke saath current: FBR salary/income tax 2026-27 slab-by-slab working ke saath, Zakat (tola, sarkari nisab, tareekh ke saath), NEPRA bijli bill, gold tola price, PTA mobile tax, property transfer, GST aur filer vs non-filer. India ke paas RupayaTools hai; Pakistan ke paas 100+ tools wala equivalent nahi.
+
+3. Har tool par free step-by-step + formula + worked example: Yehi feature Wolfram, Symbolab aur Mathway ~$10/month mein bechte hain. SumKitTool aur Toolsped sabit karte hain ke ye free ho sakta hai.
+
+4. Har result par PDF export + WhatsApp/share link: Koi Tier A site PDF export nahi deti, aur Pakistan mein results WhatsApp par hi share hote hain.
+
+5. Pakistani exams ka student cluster: MDCAT / ECAT / NUST / GIKI / COMSATS aggregates, matric/FSc percentage, CGPA to percentage. Sirf PakDar (48 tools) cover karta hai, wo bhi sirf English mein.
+
+6. Urdu mein Islamic finance cluster: Zakat, Wirasat (inheritance), Khums, Murabaha, Fitrana, Qurbani share, Hijri/Desi calendar. Ilm Tools (70 tools) sirf English hai aur us ka nisab figure purana hai; Ghulmil akeli Urdu site hai aur chhoti hai.
+
+7. Farmer cluster: Khad ki boriyan (urea/DAP/MOP), beej ki miqdar, fasal ka munafa maunds/acre mein, tube-well ki cost, mandi prices. Kisi generalist site ka farm section hi nahi hai.
+
+8. Offline PWA + dark mode + local history: CalculatorApp.me akeli chhoti site hai jo teeno karti hai; giants mein se koi bhi web par ye nahi karta.
+
+9. Instant embed widget + baad mein free API: Omni embed ke liye application aur approval mangta hai; API sirf MiniWebtool ke paas hai. Instant embed backlinks lata hai — is niche mein sab se sasta SEO.
+
+10. Har money tool par "rates checked on [date] - source" wali line: Purane nisab aur tariff kai sites par mile. Tareekh aur source ke saath rates bharosa bhi hai aur SEO bhi. Order yaad rakho: pehle zabaan (Urdu), phir jagah (Pakistan tools), phir features (steps, PDF, offline). Naye calculators sab se aakhir mein — catalogue ka size is race mein jeet nahi dilata.
+
+Order yaad rakho: pehle zabaan, phir jagah, phir features.
+
+## Categories
+
+- Finance: strongest — Omni (618), calculator.net, Toolsped (126), SumKitTool (145). Weak / missing — US/UK se aage mulki tax sirf PK/IN specialists par; Islamic finance sirf IslamicTool/Ilm par.
+- Health / Fitness: strongest — Omni (440), calculator.net, Calculator.io, Toolsped (80). Weak / missing — Local health (Pakistani diet, rupay mein cost) — kahin nahi.
+- Math / Statistics: strongest — Omni (687+196), Soup (~480), MiniWebtool (464). Weak / missing — Free full step-by-step — Wolfram/Symbolab/Mathway par paywall.
+- Science / Engineering: strongest — Omni (Physics 546, Chemistry 109), RapidTables (electrical), PlanetCalc. Weak / missing — Offline/field use; citations sirf GigaCalculator deta hai.
+- Converters: strongest — RapidTables (300+), MiniWebtool, Toolsped (248), Omni (330). Weak / missing — Live PKR rates, tola/marla/kanal — sirf PK sites par.
+- Date / Time: strongest — Time and Date, calculator.net, Toolsped (Hijri). Weak / missing — Hijri + Desi months aik saath — sirf Ghulmil/PakDar.
+- Text Tools: strongest — MiniWebtool (150), Toolsped (142), 10015.io. Weak / missing — Urdu text tools (Urdu keyboard, Roman to Urdu) — sirf Ghulmil, Toolsped, PakDar.
+- PDF Tools: strongest — iLovePDF, Smallpdf, PDF24, TinyWow, Toolsped (62). Weak / missing — Browser mein (bina upload) PDF — bohat kam; baqi upload + daily limit + paywall.
+- Developer Tools: strongest — CyberChef, IT Tools, MiniWebtool, Toolsped. Weak / missing — API sirf MiniWebtool ke paas.
+- Student Tools: strongest — Omni, Soup, GeoGebra/Desmos, Toolsped (GPA, SAT/GRE). Weak / missing — Pakistani exams: MDCAT/ECAT/NUST/GIKI/matric/FSc/CGPA — sirf PakDar aur ToolsBuilt.
+- Small Business: strongest — SolveIndex, Toolsped (platform fees, break-even). Weak / missing — PKR invoicing, GST, filer/non-filer WHT — sirf PK specialists.
+- Home / Construction: strongest — Inch (sab se mazboot), Toolsped (107). Weak / missing — PKR construction (cement bags, marla/kanal plot) — sirf RupayaTools (India).
+- Islamic: strongest — Ilm Tools (70), IslamicTool (28), IslamicInfo (12+). Weak / missing — Urdu Islamic tools, Khums, Wirasat, Fitrana, Qurbani share — sirf Ghulmil.
+- Agriculture: strongest — FertDose, VIPTools, TechnicalKisan, Fibub (22). Weak / missing — Kisi generalist ka farm section hi nahi.
+
+## Feature gaps
+
+- Step-by-step: Soup/Good Calculators/Toolsped par kuch tools mein free; Wolfram, Symbolab, Mathway par paywall (~$10/mo)
+- Formula + example: Omni, calculator.net, Soup, SumKitTool dete hain; 600+ tools wali aksar sites sirf result dikhati hain
+- Dark mode: Web par bohat kam: sirf CalculatorApp.me. Koi Tier A site advertise nahi karti
+- Offline / PWA: Taqreeban ghayab: sirf CalculatorApp.me (PWA). Miryori ke mutabiq bari sites mein se koi offline app nahi
+- Embed: Omni: application + approval + logo + link-back. CalculateItNow aur CalculatorApp.me: instant
+- API: Sirf MiniWebtool (1,080 tools, REST + MCP). Omni/calculator.net ki koi API nahi
+- History / save: Sirf CalculatorApp.me (local history). Koi bari web site save/share-result link nahi deti
+- PDF export: Sirf CalculatorApp.me. Koi Tier A site nahi deti — baqi sirf print view
+- Speed / mobile: RapidTables sab se tez (taqreeban no-JS); Omni ka JS bundle heavy hai, slow connection par sust
+- Rates ki freshness: Sab se kamzor point: nisab, tax slabs, bijli tariff purane milte hain. Sirf chand sites tareekh ke saath rate deti hain
+
+## Earning models
+
+- AdSense / display: Default hai: calculator.net (AdSense), Calculator Soup (AdSense), Calculator.io (AdSense), calculate.at (ad-supported), Good Calculators (Ezoic), Miryori (Adsterra), PDF24 (ads). In par koi subscription nahi.
+- Freemium: Wolfram Pro ~$5-10/mo, Symbolab ~$10/mo, Mathway ~$10/mo, Photomath Plus ~$10/mo, iLovePDF Premium ~$4/mo, Smallpdf Pro ~$9/mo. Free tier jaan boojh kar mehdood hai — daily PDF limits, steps band.
+- No-ads farq: ToolsBuilt bilkul ads-free hai; Muxtly/Toolsped paywall nahi rakhte; CalculatorApp.me ads/limits nahi rakhta. In ka revenue model verify nahi ho saka.
+- Affiliate / lead-gen: SmartAsset, Bankrate, NerdWallet finance calculators ko lead-gen ke tor par chalate hain. Koi generalist transparent affiliate nahi karta — mauqa hai, lekin bharose ka risk bhi.
+- Free site ka raasta: Core hamesha free + no-upload privacy pitch banao. Kamai: (1) sirf result pages par halke ads, (2) jo features muqabilay wale bechte hain (PDF export, history, API, embed) pehle free de kar users jeeto, (3) affiliate sirf wahan jahan wo khud jawab ho, disclosure ke saath.
+
+## Empty niches
+
+- Pakistani students: MDCAT/ECAT/NUST/GIKI/PIEAS/UET/COMSATS aggregates, matric/FSc percentage, CGPA to percentage — sirf PakDar aur ToolsBuilt.
+- Farmers: Khad boriyon mein (urea/DAP/MOP/SOP), beej ki miqdar, mandi/fasal prices, tube-well cost, livestock/poultry munafa — ye searches sabit shuda hain, lekin kisi generalist ke paas farm section nahi.
+- Small business (PK): GST 18% invoicing, filer vs non-filer WHT finder, salary slip/payroll, dukaan ka munafa, committee — sirf HissabAI, Haadi aur (USD mein) Toolsped.
+- Islamic finance: Murabaha, Ijarah, Sukuk, Wirasat, Khums, Fitrana, Qurbani share — sirf IslamicTool (Murabaha) aur Ghulmil ke paas kuch hai. Urdu mein kisi ke paas nahi.
+- Family / AI-era: Jahez/wedding budget ya EOBI/pension planning PKR mein kahin nahi mili; LLM API cost (Vanta Calc) aur AI ROI (ROIStack) 2026 ke naye tools hain, kisi generalist ke paas nahi.
+
+## Gaps in detail
+
+1. Zabaan — Urdu sab se bara khaali maidan hai. Bari sites ke hreflang check mein koi translated version nahi mila. MiniWebtool ki 15 zabaano mein bhi Urdu, Hindi, Arabic nahi. Miryori ki 9 zabaanein: EN, ES, FR, DE, AR, PT, JA, KO, ZH — Urdu phir bhi nahi. Full Urdu UI sirf chhoti nayi sites par: ToolsBuilt (Urdu/Arabic/Hindi, RTL), CalculatorBaba (29 tools), DigitalSpot, Ghulmil. Kisi ke paas 50 se zyada tools nahi. Roman Urdu — jis tarah aksar Pakistani type aur search karte hain — sirf HissabAI ke WhatsApp tracker aur PakDar ke translators mein hai. Matlab: 54 tools par bhi full Urdu + Roman Urdu toggle wo farq hai jo 100+ tools wali koi site nahi deti.
+
+2. Pakistan tools — bara equivalent abhi bana hi nahi. calculator.net ka tax calculator sirf US ka hai, Omni ki finance generic/US hai. Zakat ka sarkari nisab 1447 AH ke liye Rs 503,529 hai (ToolsFluent / Pakistan Edition) — Ilm Tools ke page par abhi bhi Rs 252,000 hai, yani purana aur ghalat. Jo cheez specialists par bhi kamzor hai: tola mein live Sarafa gold rate, current month ka NEPRA/FPA bijli bill (HissabAI Feb 2026 ka tariff deta hai, Pakistan Edition July 2025 ka — dono mahino mein purane ho jate hain), PTA mobile tax (sirf Pakistan Edition), EOBI/pension, committee (BC) calculator (sirf HissabAI). India ko RupayaTools (874+, Nov 2026) ne cover kar liya hai. Pakistan ka bara equivalent abhi — yehi sab se saaf mauqa hai.
+
+3. Features — jo badi sites nahi detin ya bechti hain. Step-by-step: Soup/Good Calculators/Toolsped par kuch tools mein free; Wolfram, Symbolab, Mathway par paywall (~$10/mo). Formula + example: Omni, calculator.net, Soup, SumKitTool dete hain; 600+ tools wali aksar sites sirf result dikhati hain. Dark mode: web par bohat kam, sirf CalculatorApp.me. Offline/PWA: taqreeban ghayab, sirf CalculatorApp.me. Embed: Omni application + approval mangta hai, CalculateItNow aur CalculatorApp.me instant. API: sirf MiniWebtool. History/save aur PDF export: sirf CalculatorApp.me. Speed: RapidTables sab se tez, Omni ka JS bundle heavy hai. Rates ki freshness sab se kamzor point hai.
+
+Race ab tadaad ki nahi — race zabaan, jagah aur bharose ki hai.
+
+## Sources
+
+- Research report (26 Nov 2026)
+- Live checks: calculator.net, omnicalculator.com, toolsped.com
+- Directories/comparisons: Miryori, PeerPush, AlternativeTo, SaaSHub, Listme, Produk.co, CalculateItNow
+- Estimates: SimilarWeb, SEMrush, HypeStat
+- Pakistan/Urdu: hissabai.com, pktaxcalc.com, toolsfluent.com, pakdar.com, toolsbuilt.com, calculatorbaba.com, ghulmil.net
+- Islamic: ilm-tools, islamictool.com, islamicinfo.org
+- Agriculture: fertdose.com, viptools.pk, technicalkisan.com
+- Features: calculatorapp.me, MiniWebtool, Omni embed page
+
+## Notes for AI search
+
+- Traffic aur kamai ke saare figures estimates hain (SimilarWeb / SEMrush / HypeStat) aur sources aapas mein mukhtalif hain — is liye jahan range hai, wahan range hi di gayi hai. Tool counts sites ki apni ginti hain, 26 Nov 2026 ki tareekh par. Jo cheez verify nahi ho saki, use 'n/v' likha hai.
+- Traffic par SimilarWeb aur SEMrush ~2 guna mukhtalif hain (calculator.net: 40.3M vs 77.32M, Oct 2026); kisi site ka primary (Google Analytics) figure maujood nahi. GigaCalculator, PlanetCalc, Calculatored, EasyCalculation, ConvertUnits ke tool counts verify nahi hue (n/v). Kuch sites ke ads aik page ke check se confirm nahi hote — page par ads na milna ads-free hone ka saboot nahi. Kisi site ki asal kamai primary source se verify nahi ho saki.
+- Full page list: [sitemap.xml](https://tools-websites-directory.pages.dev/sitemap.xml)
+- RSS feed: [feed.xml](https://tools-websites-directory.pages.dev/feed.xml)
+
+
+## All sites
+
+### calculator.net
+
+- URL: https://calculator.net
+- Tier: a
+- Tools: ~200
+- Focus: Finance, fitness/health, math, age, date, GPA, subnet, password
+- Language: Sirf English
+- Notes: AdSense. SimilarWeb: 40.3M visits/mo; SEMrush: 77.32M — estimators mukhtalif, range hi samjho
+
+### Omni Calculator
+
+- URL: https://omnicalculator.com
+- Tier: a
+- Tools: 3,938 (live verify)
+- Focus: Sab kuch: Math 687, Finance 618, Physics 546, Health 440, Conversion 330; lambi wazahat aur formulas
+- Language: Sirf English
+- Notes: ~10-11M visits/mo (estimate). Embed ke liye application + logo/link-back lazmi
+
+### Calculator Soup
+
+- URL: https://calculatorsoup.com
+- Tier: a
+- Tools: ~480
+- Focus: Math, statistics, geometry, fractions, science; kai tools mein darmiyani steps
+- Language: English
+- Notes: AdSense
+
+### Inch Calculator
+
+- URL: https://inchcalculator.com
+- Tier: a
+- Tools: 3,500+
+- Focus: Math/science, construction, electrical, health, finance, automotive; mobile apps bhi
+- Language: English
+- Notes: calculator.net/Omni ke top-3 competitors mein
+
+### Good Calculators
+
+- URL: https://goodcalculators.com
+- Tier: a
+- Tools: 360+ (24 categories)
+- Focus: Salary/income tax (US+UK), mortgage, retirement, statistics, engineering, HRM
+- Language: English
+- Notes: Ezoic ads — pura model advertising par (UK, 2015 se)
+
+### Calculator-Online.net
+
+- URL: https://calculator-online.net
+- Tier: a
+- Tools: ~350
+- Focus: Math, algebra, percentage, fractions, statistics, conversions, finance
+- Language: English
+- Notes: Ads page par nahi mile
+
+### The Calculator Site
+
+- URL: https://thecalculatorsite.com
+- Tier: a
+- Tools: 250+
+- Focus: Finance, health, cooking, math, construction, education, astrology
+- Language: English
+- Notes: Apni site ke mutabiq "funded by advertising"
+
+### GigaCalculator
+
+- URL: https://gigacalculator.com
+- Tier: a
+- Tools: n/v
+- Focus: Finance, business, health, date/time, math, geometry; citations (BibTeX/IEEE) ki sahulat
+- Language: English
+- Notes: Traffic n/v; tool count verify nahi ho saka
+
+### MiniWebtool
+
+- URL: https://miniwebtool.com
+- Tier: b
+- Tools: 2,022
+- Focus: Math 464, Financial 314, Text 150, randomness, health, time/date, webmaster, hash
+- Language: 15 zabaanein — Urdu/Hindi/Arabic nahi
+- Notes: 1,080 tools ki REST API + MCP server — API wali akeli site
+
+### RapidTables
+
+- URL: https://rapidtables.com
+- Tier: b
+- Tools: ~130 + 300 conv.
+- Focus: Math, conversion, electrical, reference tables (wire gauge, resistor, ASCII)
+- Language: English
+- Notes: Taqreeban no-JS — sab se tez
+
+### Calculator.io
+
+- URL: https://calculator.io
+- Tier: b
+- Tools: ~60
+- Focus: Fitness, science, math, finance, health
+- Language: English
+- Notes: AdSense
+
+### ConvertUnits
+
+- URL: https://convertunits.com
+- Tier: b
+- Tools: n/v
+- Focus: Sirf unit conversion, metric tables, SI
+- Language: English
+- Notes: Tool count verify nahi ho saka (n/v)
+
+### PlanetCalc
+
+- URL: https://planetcalc.com
+- Tier: b
+- Tools: n/v (bara)
+- Focus: User ke banaye calculators: engineering, maths, calendars (Hindu/Indian bhi)
+- Language: English
+- Notes: Tool count verify nahi ho saka (n/v)
+
+### Time and Date
+
+- URL: https://timeanddate.com
+- Tier: b
+- Tools: Date/time only
+- Focus: Date duration, calendars, time zones, countdowns
+- Language: English
+- Notes: 
+
+### Desmos
+
+- URL: https://desmos.com
+- Tier: b
+- Tools: Thode, gehre
+- Focus: Graphing, geometry, algebra, statistics — classroom maths
+- Language: 
+- Notes: Free
+
+### GeoGebra
+
+- URL: https://geogebra.org
+- Tier: b
+- Tools: Thode, gehre
+- Focus: Graphing, geometry, algebra, statistics — classroom maths
+- Language: 
+- Notes: Free; save ke liye account chahiye
+
+### Wolfram Alpha
+
+- URL: https://wolframalpha.com
+- Tier: b
+- Tools: Engine
+- Focus: Maths, science, finance, history — computational knowledge engine
+- Language: 
+- Notes: Freemium: steps free nahi; Pro $9.99/mo ya $5/mo (saalana)
+
+### Symbolab
+
+- URL: https://symbolab.com
+- Tier: b
+- Tools: Solver
+- Focus: Algebra, trig, calculus, matrices — step-by-step maths
+- Language: 13+ interface languages (Urdu confirm nahi)
+- Notes: Pro ~$9.95/mo
+
+### Mathway
+
+- URL: https://mathway.com
+- Tier: b
+- Tools: 59+
+- Focus: Algebra/calculus solver
+- Language: 
+- Notes: Full steps ~$9.99/mo
+
+### Photomath
+
+- URL: https://photomath.com
+- Tier: b
+- Tools: 59+ / camera
+- Focus: Algebra/calculus solver; camera se sawal parhta hai
+- Language: 
+- Notes: Photomath Plus $9.99/mo
+
+### Calculatored
+
+- URL: https://calculatored.com
+- Tier: b
+- Tools: n/v
+- Focus: General aur maths calculators
+- Language: English
+- Notes: Group entry (Calculatored, EasyCalculation, Calculator.com, Ncalculators, eMathHelp, HackMath); tool counts verify nahi hue (n/v)
+
+### EasyCalculation
+
+- URL: https://easycalculation.com
+- Tier: b
+- Tools: n/v
+- Focus: General aur maths calculators
+- Language: English
+- Notes: Group entry; tool count verify nahi ho saka (n/v)
+
+### Calculator.com
+
+- URL: https://calculator.com
+- Tier: b
+- Tools: n/v
+- Focus: General aur maths calculators
+- Language: English
+- Notes: ~284K visits/mo (estimate); group entry, tool count n/v
+
+### Ncalculators
+
+- URL: https://ncalculators.com
+- Tier: b
+- Tools: n/v
+- Focus: General aur maths calculators; step-by-step maths
+- Language: English
+- Notes: Group entry; tool count verify nahi ho saka (n/v)
+
+### eMathHelp
+
+- URL: https://emathhelp.com
+- Tier: b
+- Tools: n/v
+- Focus: General aur maths calculators; step-by-step maths
+- Language: English
+- Notes: Group entry; tool count verify nahi ho saka (n/v)
+
+### HackMath
+
+- URL: https://hackmath.net
+- Tier: b
+- Tools: n/v
+- Focus: General aur maths calculators
+- Language: English
+- Notes: Group entry; tool count verify nahi ho saka (n/v)
+
+### Toolsped
+
+- URL: https://toolsped.com
+- Tier: c
+- Tools: 857 (live verify)
+- Focus: Converters 248, Generators/Text 142, Finance 126, Home 107, Math 90, PDF 62, Health/Education 80
+- Language: English (UI)
+- Notes: Urdu Keyboard, Hijri converter, Prayer Time, Qibla — lekin ye tools hain, UI English hai. Free, no sign-up
+
+### RupayaTools
+
+- URL: https://rupayatools.com
+- Tier: c
+- Tools: 874+
+- Focus: India-focused: salary, EMI, income tax, CGPA, FD, cement/construction, PDF
+- Language: 
+- Notes: Nov 2026 launch. Pakistan ke liye yehi model copy karne wala hai
+
+### Calculators Daily
+
+- URL: https://calculatorsdaily.com
+- Tier: c
+- Tools: 1,007
+- Focus: General, 30+ categories
+- Language: 
+- Notes: Free
+
+### Muxtly
+
+- URL: https://muxtly.com
+- Tier: c
+- Tools: 300+
+- Focus: Finance, health, file conversion; privacy-first, 100% browser mein
+- Language: 
+- Notes: Free, no sign-up
+
+### TinyWow
+
+- URL: https://tinywow.com
+- Tier: c
+- Tools: 250+
+- Focus: PDF, image, video, AI writing, text, code tools
+- Language: 
+- Notes: Free, no sign-up
+
+### 10015.io
+
+- URL: https://10015.io
+- Tier: c
+- Tools: 300+
+- Focus: PDF, image, video, AI writing, text, code tools
+- Language: 
+- Notes: Free, no sign-up
+
+### iLovePDF
+
+- URL: https://ilovepdf.com
+- Tier: c
+- Tools: Bara PDF set
+- Focus: Merge, split, compress, convert, OCR, sign
+- Language: 
+- Notes: Freemium: free limits, Premium ~$4-9/mo. Files upload hoti hain — privacy gap yahin hai
+
+### Smallpdf
+
+- URL: https://smallpdf.com
+- Tier: c
+- Tools: 30+
+- Focus: Merge, split, compress, convert, OCR, sign
+- Language: 
+- Notes: Freemium: free limits, Premium ~$4-9/mo. Files upload hoti hain — privacy gap yahin hai
+
+### PDF24
+
+- URL: https://pdf24.org
+- Tier: c
+- Tools: PDF+image
+- Focus: Merge, split, compress, convert, OCR, sign
+- Language: 
+- Notes: Freemium / ads; files upload hoti hain — privacy gap yahin hai
+
+### CalculatorApp.me
+
+- URL: https://calculatorapp.me
+- Tier: c
+- Tools: 150+
+- Focus: Finance, health, maths, tax (US/UK/CA/AU/IN)
+- Language: 
+- Notes: Sab se feature-complete chhoti site: PDF export, dark mode, PWA/offline, embed, local history, voice input — sab free
+
+### CalculateItNow
+
+- URL: https://calculateitnow.com
+- Tier: c
+- Tools: 413
+- Focus: General + generated date/conversion/tax pages
+- Language: 
+- Notes: Instant embed — koi form/approval nahi. Sep 2026 launch
+
+### Calculators Planet
+
+- URL: https://calculatorsplanet.com
+- Tier: c
+- Tools: 382+
+- Focus: Financial, math, health, everyday; formulas established standards se
+- Language: 
+- Notes: Free, no sign-up
+
+### SumKitTool
+
+- URL: https://sumkittool.com
+- Tier: c
+- Tools: 331+
+- Focus: Finance 145, math 70, text, health, home, dev; US/UK/CA/AU salary+tax
+- Language: 
+- Notes: Har tool par formula + worked example + sources. Founder Sargodha, Pakistan se
+
+### calculate.at
+
+- URL: https://calculate.at
+- Tier: c
+- Tools: 290+
+- Focus: Finance, health, math, construction; mortgage, EMI, tax, retirement/FIRE, solar ROI
+- Language: 
+- Notes: Free, ad-supported / no sign-up
+
+### Calculator4U
+
+- URL: https://calculator4u.com
+- Tier: c
+- Tools: 185+
+- Focus: Finance, health, math, construction; mortgage, EMI, tax, retirement/FIRE, solar ROI
+- Language: 
+- Notes: Free, ad-supported / no sign-up
+
+### Miryori
+
+- URL: https://miryori.org
+- Tier: c
+- Tools: 29
+- Focus: Salary/pay, loans, interest, PTO, health, utility
+- Language: 9 zabaanein (EN, ES, FR, DE, AR, PT, JA, KO, ZH) — Urdu phir bhi nahi
+- Notes: Adsterra ads
+
+### ToolsBuilt
+
+- URL: https://toolsbuilt.com
+- Tier: c
+- Tools: 50
+- Focus: Finance/maths, dates; FBR salary tax, matric/FSc/university marks; PKR default
+- Language: 9 zabaanein incl. Urdu, RTL support
+- Notes: Koi ads nahi, GitHub Pages par
+
+### CalculatorBaba
+
+- URL: https://calculatorbaba.com
+- Tier: c
+- Tools: 29
+- Focus: Health, money, math, study, daily life; tola/marla/kanal
+- Language: English + Urdu
+- Notes: Free, browser mein
+
+### CyberChef
+
+- URL: https://cyberchef.org
+- Tier: c
+- Tools: Dev set
+- Focus: Developer utilities: data recipes, text, encoding
+- Language: 
+- Notes: Free / open source, self-host ho sakta hai
+
+### IT Tools
+
+- URL: https://it-tools.tech
+- Tier: c
+- Tools: Dev set
+- Focus: Developer utilities: data recipes, text, encoding
+- Language: 
+- Notes: Free / open source, self-host ho sakta hai
+
+### Sejda
+
+- URL: https://sejda.com
+- Tier: c
+- Tools: PDF set
+- Focus: PDF edit/convert
+- Language: 
+- Notes: Freemium; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+
+### PDFgear
+
+- URL: https://pdfgear.com
+- Tier: c
+- Tools: PDF set
+- Focus: PDF edit/convert
+- Language: 
+- Notes: Free; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+
+### PDF Candy
+
+- URL: https://pdfcandy.com
+- Tier: c
+- Tools: PDF set
+- Focus: PDF edit/convert
+- Language: 
+- Notes: Free; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+
+### Stirling-PDF
+
+- URL: https://stirlingpdf.com
+- Tier: c
+- Tools: 60+
+- Focus: PDF edit/convert; 60+ tools, open source
+- Language: 
+- Notes: Open source; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)
+
+### Vanta Calc
+
+- URL: https://vantacalc.com
+- Tier: c
+- Tools: n/v
+- Focus: General + niche: LLM API cost calculator (110+ models, data 23 Nov 2026 refresh), stats, GPA
+- Language: 
+- Notes: AI-era calculators — 2026 ka naya niche
+
+### Calciro
+
+- URL: https://calciro.com
+- Tier: c
+- Tools: Chhote sets
+- Focus: Finance/health/math
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry (Calciro, Calculora, SolveIndex, ZFinPro, Kinced, fixmint, The Mighty Calculator, ROIStack)
+
+### Calculora
+
+- URL: https://calculora.com
+- Tier: c
+- Tools: Chhote sets
+- Focus: Finance/health/math
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### SolveIndex
+
+- URL: https://solveindex.com
+- Tier: c
+- Tools: Chhote sets
+- Focus: Finance/health/math; business/SaaS metrics
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### ZFinPro
+
+- URL: https://zfinpro.com
+- Tier: c
+- Tools: Chhote sets
+- Focus: Finance/health/math
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### Kinced
+
+- URL: https://kinced.com
+- Tier: c
+- Tools: Chhote sets
+- Focus: Finance/health/math
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### fixmint
+
+- URL: https://fixmint.com
+- Tier: c
+- Tools: Chhote sets
+- Focus: Finance/health/math
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### The Mighty Calculator
+
+- URL: https://themightycalculator.com
+- Tier: c
+- Tools: 38
+- Focus: Finance/health/math
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### ROIStack
+
+- URL: https://roistack.com
+- Tier: c
+- Tools: 38+
+- Focus: Finance/health/math; AI-ROI 38+
+- Language: 
+- Notes: Free/freemium, no sign-up; group entry
+
+### SudoTool
+
+- URL: https://sudotool.com
+- Tier: c
+- Tools: n/v
+- Focus: Finance, mortgage, dev, date tools
+- Language: 
+- Notes: Free, koi upload nahi
+
+### HissabAI
+
+- URL: https://hissabai.com
+- Tier: d
+- Tools: 20
+- Focus: FBR 2026-27 salary tax, freelancer tax, GST, bijli bill (NEPRA Feb 2026), Zakat (aaj ka nisab), committees, PSX dividends, PKR inflation
+- Language: 
+- Notes: WhatsApp tracker EN / Roman Urdu / Urdu mein
+
+### PKTaxCalc
+
+- URL: https://pktaxcalc.com
+- Tier: d
+- Tools: 10
+- Focus: Income/salary tax slab-by-slab working ke saath, Zakat, gold/silver Zakat tola mein, vehicle/token tax
+- Language: 
+- Notes: Finance Act 2026; Rs 600k tak tax-free
+
+### ToolsFluent
+
+- URL: https://toolsfluent.com
+- Tier: d
+- Tools: 7
+- Focus: Income tax old-vs-new, freelancer (PSEB 0.25%), Zakat nisab Rs 503,529, GST 18%, Punjab token tax, property transfer 236K/236C
+- Language: 
+- Notes: Tax tools (ToolsFluent tax)
+
+### PakDar
+
+- URL: https://pakdar.com
+- Tier: d
+- Tools: 48+
+- Focus: MDCAT (PMDC 10/40/50), NUST/GIKI/PIEAS/UET/COMSATS aggregates, FBR salary tax, bijli bill, EN-Urdu/Arabic/Roman-Urdu translators
+- Language: 
+- Notes: Sab client-side
+
+### The Pakistan Edition
+
+- URL: https://thepakistanedition.com
+- Tier: d
+- Tools: ~6+
+- Focus: FBR salary tax 2026-27, bijli (NEPRA July 2025), Zakat (nisab Rs 503,529), PTA/DIRBS mobile tax, property tax
+- Language: 
+- Notes: 
+
+### Haadi Associates
+
+- URL: https://haadiassociates.com
+- Tier: d
+- Tools: 8
+- Focus: Salary/business/rental tax, late-filing penalty, GST, Zakat, WHT finder
+- Language: 
+- Notes: Tax consultants ke checked
+
+### Ghulmil
+
+- URL: https://ghulmil.net
+- Tier: d
+- Tools: n/v
+- Focus: Urdu keyboard, Roman to Urdu, namaz (Hanafi/Jafria), Zakat/Khums, Hijri, gold tola, salary tax, Desi months
+- Language: Urdu-first
+- Notes: Urdu-first site
+
+### DigitalSpot
+
+- URL: https://digitalspot.com
+- Tier: d
+- Tools: n/v
+- Focus: EMI, discount waghera
+- Language: 
+- Notes: Pura interface EN se Urdu switch ho jata hai
+
+### Ilm Tools
+
+- URL: https://ilm-tools.netlify.app/
+- Tier: e
+- Tools: 70
+- Focus: Zakat (cash/gold/silver/business/shares), prayer times, Qibla, Hijri, Ramadan/Eid countdowns, Tasbih, 99 Names, Hajj/Umrah checklists
+- Language: Sirf English
+- Notes: Nisab figure Rs 252,000 purana hai
+
+### IslamicTool
+
+- URL: https://islamictool.com
+- Tier: e
+- Tools: 28
+- Focus: Prayer, Qibla, Hijri, Zakat + live nisab, inheritance (Faraid), Murabaha calculator, 99 Names, duas
+- Language: 
+- Notes: 
+
+### IslamicInfo
+
+- URL: https://islamicinfo.org
+- Tier: e
+- Tools: 12+
+- Focus: Prayer, Qibla, Hijri, Zakat (live nisab), inheritance, Tasbeeh
+- Language: 
+- Notes: 
+
+### FertDose
+
+- URL: https://fertdose.com
+- Tier: f
+- Tools: n/v
+- Focus: NPK dose per acre/kanal/marla/hectare, crop library, planting calendar
+- Language: 
+- Notes: Har step aur source ke saath (Pakistan)
+
+### VIPTools.pk
+
+- URL: https://viptools.pk
+- Tier: f
+- Tools: ~6 tools
+- Focus: Urea/DAP/SOP bags, yield/profit maunds/acre mein, tube-well bijli, beej, livestock
+- Language: 
+- Notes: Pakistan
+
+### OfficeCalculator
+
+- URL: https://officecalculator.com
+- Tier: f
+- Tools: n/v
+- Focus: Crop workspace (Punjab crop calendar ke saath)
+- Language: 
+- Notes: Pakistan
+
+### TechnicalKisan
+
+- URL: https://technicalkisan.com
+- Tier: f
+- Tools: n/v
+- Focus: 9 faslon ki khad, seed rate 27 faslein, mandi prices
+- Language: 
+- Notes: India
+
+### Toolvala
+
+- URL: https://www.toolvala.in/
+- Tier: f
+- Tools: 18
+- Focus: Agriculture tools
+- Language: 
+- Notes: India
+
+### Fibub
+
+- URL: https://fibub.com
+- Tier: f
+- Tools: 22
+- Focus: Agriculture tools
+- Language: 
+- Notes: General
+
+### 1001.tools
+
+- URL: https://1001.tools
+- Tier: f
+- Tools: n/v
+- Focus: Agriculture tools
+- Language: 
+- Notes: General
+

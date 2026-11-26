@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-11-26T02:16:38.407Z",
+  "tiers": [
+    "/tiers/a",
+    "/tiers/b",
+    "/tiers/c",
+    "/tiers/d",
+    "/tiers/e",
+    "/tiers/f"
+  ],
+  "sites": 78,
+  "pages": [
+    "/",
+    "/sites",
+    "/tiers/a",
+    "/tiers/b",
+    "/tiers/c",
+    "/tiers/d",
+    "/tiers/e",
+    "/tiers/f",
+    "/top-10",
+    "/gaps",
+    "/categories",
+    "/about",
+    "/sources"
+  ]
+}

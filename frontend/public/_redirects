@@ -1,0 +1,4 @@
+# SPA fallback: prerendered files are served first; any other path
+# (e.g. /search, which is intentionally not prerendered/indexed)
+# falls back to the app shell.
+/* /index.html 200

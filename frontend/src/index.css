@@ -1,0 +1,301 @@
+:root {
+  --bg: #ffffff;
+  --text: #1c2430;
+  --muted: #5a6675;
+  --link: #1a5276;
+  --link-hover: #0f3550;
+  --border: #dbe2ea;
+  --card-bg: #f6f8fa;
+  --hero-bg: #eef4f8;
+  --answer-bg: #eaf6ec;
+  --answer-border: #2e7d32;
+  --radius: 8px;
+  --max: 1100px;
+  --article-max: 760px;
+}
+
+/* Dark theme is opt-in via the header toggle (default is light).
+   The value lives on <html data-theme>, set before first paint by the
+   inline script in index.html so there is no flash on load. */
+html[data-theme="dark"] {
+  --bg: #12181f;
+  --text: #e6ebef;
+  --muted: #a7b2bd;
+  --link: #7fb8dd;
+  --link-hover: #a9d1ec;
+  --border: #2c3844;
+  --card-bg: #1b242e;
+  --hero-bg: #182430;
+  --answer-bg: #16281a;
+  --answer-border: #4caf50;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a { color: var(--link); }
+a:hover { color: var(--link-hover); }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.section { padding-top: 28px; padding-bottom: 28px; }
+
+.site-header { border-bottom: 1px solid var(--border); background: var(--bg); }
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 24px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+.brand { font-size: 22px; font-weight: 800; text-decoration: none; color: var(--text); }
+.header-inner nav { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-left: auto; }
+.header-inner nav a { text-decoration: none; font-size: 15px; }
+.header-inner nav a.active { font-weight: 700; text-decoration: underline; }
+
+.hero { background: var(--hero-bg); padding: 40px 0; }
+.hero h1 { font-size: 34px; line-height: 1.25; margin: 0 0 12px; max-width: 720px; }
+.lede { font-size: 19px; color: var(--muted); max-width: 720px; }
+
+h1 { font-size: 32px; line-height: 1.3; }
+h2 { font-size: 24px; margin-top: 36px; }
+h3 { font-size: 19px; }
+
+.button {
+  display: inline-block;
+  background: var(--link);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+.button:hover { color: #fff; background: var(--link-hover); }
+.button-secondary { background: transparent; color: var(--link); border: 2px solid var(--link); }
+.button-secondary:hover { color: var(--link-hover); border-color: var(--link-hover); background: transparent; }
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.card, .post-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  background: var(--card-bg);
+}
+.card h3, .post-card h3 { margin: 8px 0; }
+.post-card-meta { font-size: 14px; color: var(--muted); margin: 0; }
+
+.article { max-width: var(--article-max); }
+.article h1 { margin-bottom: 8px; }
+.post-meta { color: var(--muted); font-size: 15px; }
+.breadcrumb { font-size: 14px; color: var(--muted); }
+.answer {
+  background: var(--answer-bg);
+  border-left: 4px solid var(--answer-border);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.faq { border-top: 1px solid var(--border); padding: 8px 0; }
+.faq h3 { margin-bottom: 4px; }
+.muted { color: var(--muted); font-size: 15px; }
+
+.contact-form { display: grid; gap: 16px; max-width: 560px; }
+.contact-form label { display: grid; gap: 6px; font-weight: 600; }
+.contact-form input, .contact-form textarea {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+}
+
+/* Screen-reader-only label text (search inputs). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Header search box + search page form. */
+.search { display: flex; gap: 8px; align-items: center; flex: 1 1 260px; max-width: 420px; }
+.search input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 15px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+.search-button { padding: 8px 14px; font-size: 15px; }
+
+/* Dark-mode toggle — a plain text button, never styled as an ad. */
+.theme-toggle {
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  color: var(--text);
+  cursor: pointer;
+}
+.theme-toggle:hover { border-color: var(--link); }
+
+/* Visible breadcrumbs (post, field, category, collection pages). */
+.breadcrumbs, .breadcrumb { font-size: 14px; color: var(--muted); margin-bottom: 8px; }
+
+/* Stats strip (home page). */
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 8px 0 8px;
+}
+.stats-strip > div {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-bg);
+  padding: 14px 16px;
+  text-align: center;
+}
+.stats-strip strong { display: block; font-size: 26px; line-height: 1.2; }
+.stats-strip span { font-size: 14px; color: var(--muted); }
+
+/* Tier badge on site cards. */
+.tier-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 13px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  background: var(--bg);
+}
+
+/* Data tables (gaps, categories). */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 15px;
+}
+.data-table th, .data-table td {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+.data-table th { background: var(--card-bg); }
+.data-table td { background: var(--bg); }
+
+/* Filter selects (sites page). */
+.toolbar select {
+  font: inherit;
+  font-size: 15px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Site imagery: hero banner, card thumbnails, page illustrations.
+   All images are local files with no text baked in. */
+.hero-banner {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin-top: 24px;
+  display: block;
+}
+.card-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin-bottom: 12px;
+}
+.page-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius);
+  display: block;
+  margin: 8px 0 16px;
+}
+
+/* Free tools: forms and results. All tools run client-side. */
+.tool-form { display: grid; gap: 16px; max-width: 560px; }
+.tool-form label { display: grid; gap: 6px; font-weight: 600; }
+.tool-form input, .tool-form textarea, .tool-form select {
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  width: 100%;
+}
+.tool-result {
+  background: var(--answer-bg);
+  border-left: 4px solid var(--answer-border);
+  padding: 14px 18px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--link);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.link-button:hover { color: var(--link-hover); }
+
+/* Error boundary fallback. */
+.notice {
+  background: var(--answer-bg);
+  border-left: 4px solid var(--answer-border);
+  padding: 12px 16px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  overflow-wrap: anywhere;
+}
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+.site-footer { border-top: 1px solid var(--border); margin-top: 40px; }
+.footer-inner { padding-top: 24px; padding-bottom: 24px; font-size: 15px; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .hero h1, h1 { font-size: 26px; }
+  .header-inner nav { margin-left: 0; }
+}
