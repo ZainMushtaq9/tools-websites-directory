@@ -1,8 +1,8 @@
-// Checks internal links in the route manifest: every /tiers/* path
-// referenced by the registry must exist in publicPages, and every
-// site URL in the data must be a valid https URL.
-import { publicPages, TIERS } from "../frontend/src/config/pages.js";
-import { SITES } from "../frontend/src/config/sites-data.js";
+// Checks internal links in the route manifest: every public path
+// referenced by the registry must exist in publicPages, every
+// category route must exist, and every site URL in the data must be
+// a valid https URL.
+import { publicPages, CATEGORIES, SITES, sitesByCategory } from "../frontend/src/config/pages.js";
 
 const pages = new Set(publicPages.map((p) => p.path));
 let errors = 0;
@@ -12,8 +12,8 @@ const check = (from, path) => {
     errors++;
   }
 };
-for (const t of TIERS) check("tiers", `/tiers/${t.id}`);
-for (const s of ["/", "/sites", "/top-10", "/gaps", "/categories", "/about", "/sources"]) {
+for (const c of CATEGORIES) check("categories", `/categories/${c.id}`);
+for (const s of ["/", "/sites", "/categories", "/best", "/about"]) {
   check("static", s);
 }
 // /search is intentionally not in publicPages (not indexed), but the
@@ -23,10 +23,12 @@ for (const s of SITES) {
     console.error(`BAD site URL: ${s.name} -> ${s.url}`);
     errors++;
   }
-  if (!TIERS.find((t) => t.id === s.tier)) {
-    console.error(`BAD tier for site: ${s.name} -> ${s.tier}`);
+}
+for (const c of CATEGORIES) {
+  if (sitesByCategory(c.id).length === 0) {
+    console.error(`CATEGORY HAS NO SITES: ${c.id} (${c.name})`);
     errors++;
   }
 }
-console.log(`link check: ${pages.size} public pages known, ${SITES.length} sites, ${errors} broken link(s).`);
+console.log(`link check: ${pages.size} public pages known, ${SITES.length} sites, ${CATEGORIES.length} categories, ${errors} broken link(s).`);
 process.exit(errors ? 1 : 0);

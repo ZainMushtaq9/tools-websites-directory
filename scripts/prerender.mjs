@@ -15,10 +15,10 @@
 // Route "/" overwrites <outDir>/index.html in place. Both files are the
 // built shell with route-correct <title>, meta description, canonical,
 // OG + Twitter tags and JSON-LD, plus real static content inside #root:
-// home carries findings + tier links + site links; /sites lists ALL
-// sites with links; tier pages list their sites; static pages carry
-// their content. The React app still mounts normally in a browser
-// (main.jsx uses createRoot, which replaces the static content).
+// home carries categories + best picks + all site links; /sites lists
+// ALL sites with links; category pages list their sites; /best carries
+// the ranked comparison. The React app still mounts normally in a
+// browser (main.jsx uses createRoot, which replaces the static content).
 // Running the script twice is safe: previously inserted tags are
 // stripped before re-inserting.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -29,24 +29,11 @@ import { SITE_URL, SITE_NAME, AUTHOR_NAME } from "../frontend/src/config/site.js
 import {
   STATIC_PAGES,
   publicPages,
-  TIERS,
-  getTier,
-  sitesByTier
+  CATEGORIES,
+  sitesByCategory
 } from "../frontend/src/config/pages.js";
-import {
-  SITES,
-  SITE_STATS,
-  FINDINGS,
-  TOP10,
-  CATEGORY_ROWS,
-  FEATURE_GAPS,
-  EARNING_MODELS,
-  EMPTY_NICHES,
-  GAP_TEXT,
-  SOURCES,
-  DISCLAIMER,
-  NOT_VERIFIED
-} from "../frontend/src/config/sites-data.js";
+import { SITES } from "../frontend/src/config/sites-data.js";
+import { AVAILABLE_IMAGES, siteCategories } from "../frontend/src/config/categories.js";
 import {
   pageMeta,
   breadcrumbJsonLd,
@@ -54,23 +41,26 @@ import {
   itemListJsonLd,
   webPageJsonLd
 } from "../frontend/src/config/seo.js";
-import { HOME_FAQS, SITES_FAQS, TOP10_FAQS, GAPS_FAQS, TIER_FAQS } from "../frontend/src/config/faqs.js";
+import { HOME_FAQS, SITES_FAQS, BEST_FAQS, ABOUT_FAQS, CATEGORY_FAQS } from "../frontend/src/config/faqs.js";
 
 const OG_IMAGE = `${SITE_URL}/og-image.jpg`;
+const OG_ALT = "Tools Websites Directory — 76 free online tools websites";
 
-const ABOUT_FAQS = [
-  {
-    q: "Yeh directory kya hai?",
-    a: "Yeh 78 tools websites ka aik jaiza hai — har site ka tier, tools ki tadaad, focus aur notes, Roman Urdu mein, aik hi jagah par."
-  },
-  {
-    q: "Tiers kaise kaam karte hain?",
-    a: "Har site Tier A se F tak aik tier mein hai: A sab se badi sites, B bare generalists aur solvers, C 'all tools' sites, D Pakistan-specific sites, E Islamic finance/life, aur F agriculture/farmer tools."
-  },
-  {
-    q: "Kya yeh saari maloomat verify hain?",
-    a: "Nahi — kuch details verify nahi hui hain aur kuch figures estimates hain. Har site ko khud check karein; Sources page par poori tafseel hai."
-  }
+// The five best picks, mirroring pages/Home.jsx and pages/Best.jsx.
+const BEST_PICKS = [
+  { name: "Omni Calculator", url: "https://omnicalculator.com", why: "Sab se bara catalogue — 3,938 tools, gehri wazahat aur formulas ke saath." },
+  { name: "calculator.net", url: "https://calculator.net", why: "Tez aur simple — aam hisaab ke liye sab se zyada istemal hone wali site." },
+  { name: "Calculator Soup", url: "https://calculatorsoup.com", why: "Maths aur statistics mein gehra — kai tools mein darmiyani steps bhi." },
+  { name: "Inch Calculator", url: "https://inchcalculator.com", why: "Construction aur conversions mein sab se mazboot — 3,500+ tools." },
+  { name: "MiniWebtool", url: "https://miniwebtool.com", why: "2,022 tools aur API — text, math aur finance aik hi jagah par." }
+];
+
+const RANKED_BEST = [
+  { n: 1, name: "Omni Calculator", url: "https://omnicalculator.com", tools: "3,938 tools", why: "Sab se bara catalogue — Math 687, Finance 618, Physics 546, Health 440. Har tool par lambi wazahat aur formulas.", bestFor: "Gehri wazahat aur formulas" },
+  { n: 2, name: "calculator.net", url: "https://calculator.net", tools: "~200 tools", why: "Tez aur simple — finance, health, maths, age aur date aik hi jagah par. Sab se zyada istemal hone wali calculator site.", bestFor: "Roz ke aam hisaab" },
+  { n: 3, name: "Calculator Soup", url: "https://calculatorsoup.com", tools: "~480 tools", why: "Maths, statistics aur geometry mein gehra — kai tools mein darmiyani steps bhi dikhata hai, muft mein.", bestFor: "Maths aur steps" },
+  { n: 4, name: "Inch Calculator", url: "https://inchcalculator.com", tools: "3,500+ tools", why: "Construction, electrical, conversions aur health — aur mobile apps bhi. Construction ke liye sab se mazboot site.", bestFor: "Construction aur conversions" },
+  { n: 5, name: "MiniWebtool", url: "https://miniwebtool.com", tools: "2,022 tools", why: "Math, finance, text aur webmaster tools aik hi jagah par — aur 1,080 tools ki API bhi.", bestFor: "Har tarah ke tools aik jagah" }
 ];
 
 function faqHtml(faqs) {
@@ -104,10 +94,12 @@ function crumbsFor(names) {
 
 function siteLinkList(sites) {
   return `<ul>${sites
-    .map(
-      (s) =>
-        `<li><a href="${esc(s.url)}">${esc(s.name)}</a> — ${esc(s.focus || "")}${s.tools ? ` (${esc(s.tools)} tools)` : ""}${s.notes ? ` — ${esc(s.notes)}` : ""}</li>`
-    )
+    .map((s) => {
+      const cats = siteCategories(s)
+        .map((id) => (CATEGORIES.find((c) => c.id === id) || {}).name || id)
+        .join(", ");
+      return `<li><a href="${esc(s.url)}">${esc(s.name)}</a> — ${esc(s.focus || "")}${s.tools ? ` (${esc(s.tools)} tools)` : ""}${cats ? ` — ${esc(cats)}` : ""}</li>`;
+    })
     .join("")}</ul>`;
 }
 
@@ -116,11 +108,9 @@ function siteLinkList(sites) {
 // React app replaces this static body on mount, so users never see it.
 const NAV_LINKS = [
   { href: "/sites", label: "Sites" },
-  { href: "/top-10", label: "Top 10" },
-  { href: "/gaps", label: "Gaps" },
   { href: "/categories", label: "Categories" },
+  { href: "/best", label: "Best" },
   { href: "/about", label: "About" },
-  { href: "/sources", label: "Sources" },
   { href: "/search", label: "Search" }
 ];
 
@@ -128,12 +118,20 @@ function navHtml(extraLinks, base) {
   const links = [
     { href: "/", label: SITE_NAME },
     ...extraLinks,
-    ...NAV_LINKS.filter((n) => !extraLinks.some((l) => l.href === n.href)),
-    ...(TIERS || []).map((t) => ({ href: `/tiers/${t.id}`, label: `Tier ${t.letter}` }))
+    ...NAV_LINKS.filter((n) => !extraLinks.some((l) => l.href === n.href))
   ];
   return `<nav><p>${links
     .map((l) => `<a href="${esc(withBase(base, l.href))}">${esc(l.label)}</a>`)
     .join(" · ")}</p></nav>`;
+}
+
+// Category header image if the file exists, else a plain placeholder
+// block (never a broken <img>). Mirrors pages/Category.jsx.
+function categoryImageHtml(cat, base) {
+  if (cat.image && AVAILABLE_IMAGES.has(cat.image) && existsSync(join(root, "frontend/public/images", cat.image))) {
+    return `<img src="${esc(withBase(base, `/images/${cat.image}`))}" alt="${esc(cat.name)} — tools websites" width="1200" height="630" style="max-width:100%;height:auto;border-radius:8px;margin-bottom:16px" />`;
+  }
+  return `<div role="img" aria-label="${esc(cat.name)} — tools websites" style="max-width:100%;height:180px;border-radius:8px;margin-bottom:16px;display:flex;align-items:center;justify-content:center;background:#eef2f5;color:#5a6b7a;font-size:20px;font-weight:600;text-align:center;padding:16px">${esc(cat.name)}</div>`;
 }
 
 // Returns { title, description, h1, lede, jsonLd, body } for a route,
@@ -141,39 +139,40 @@ function navHtml(extraLinks, base) {
 // `base` is the hosting subpath ("/" on Cloudflare Pages, the project
 // subpath on GitHub Pages); every internal href goes through withBase.
 function routeMeta(path, base) {
-  // Tier pages: /tiers/<id>
-  if (path.startsWith("/tiers/")) {
-    const tier = getTier(path.slice("/tiers/".length));
-    if (!tier) throw new Error(`unknown tier route: ${path}`);
+  // Category pages: /categories/<slug>
+  if (path.startsWith("/categories/")) {
+    const cat = CATEGORIES.find((c) => c.id === path.slice("/categories/".length));
+    if (!cat) throw new Error(`unknown category route: ${path}`);
     const page = STATIC_PAGES[path];
-    const sites = sitesByTier(tier.id);
-    const faqs = TIER_FAQS[tier.id] || [];
-    const tierIndex = (TIERS || []).findIndex((t) => t.id === tier.id);
-    const prevTier = tierIndex > 0 ? TIERS[tierIndex - 1] : null;
-    const nextTier = tierIndex >= 0 && tierIndex < TIERS.length - 1 ? TIERS[tierIndex + 1] : null;
+    const sites = sitesByCategory(cat.id);
+    const faqs = CATEGORY_FAQS[cat.id] || [];
+    const idx = CATEGORIES.findIndex((c) => c.id === cat.id);
+    const prev = idx > 0 ? CATEGORIES[idx - 1] : null;
+    const next = idx >= 0 && idx < CATEGORIES.length - 1 ? CATEGORIES[idx + 1] : null;
     return {
       ...page,
       jsonLd: [
         webPageJsonLd({ title: page.title, description: page.description, path }),
         breadcrumbJsonLd(
           crumbsFor([
-            ["Sites", "/sites"],
-            [`Tier ${tier.letter}`, path]
+            ["Categories", "/categories"],
+            [cat.name, path]
           ])
         ),
         itemListJsonLd(
-          `Tier ${tier.letter} — ${tier.name}`,
+          `${cat.name} — tools websites`,
           sites.map((s) => ({ name: s.name, url: s.url }))
         ),
         ...(faqs.length ? [faqJsonLd(faqs)] : [])
       ],
       body:
-        `<p><strong>Takeaway:</strong> ${esc(tier.takeaway)}</p>` +
-        `<p>${sites.length} sites — Tier ${tier.letter}</p>` +
-        `<h2>Tier ${tier.letter} ki sites</h2>` +
+        categoryImageHtml(cat, base) +
+        `<p><strong>Best pick:</strong> ${esc(cat.bestPick)}</p>` +
+        `<p>${sites.length} sites — ${esc(cat.name)}</p>` +
+        `<h2>${esc(cat.name)} ki sites</h2>` +
         siteLinkList(sites) +
         (faqs.length ? faqHtml(faqs) : "") +
-        `<p>${prevTier ? `<a href="${esc(withBase(base, `/tiers/${prevTier.id}`))}">← Tier ${prevTier.letter}</a> · ` : ""}<a href="${esc(withBase(base, "/sites"))}">Saari sites →</a> · <a href="${esc(withBase(base, "/top-10"))}">Top 10 additions →</a>${nextTier ? ` · <a href="${esc(withBase(base, `/tiers/${nextTier.id}`))}">Tier ${nextTier.letter} →</a>` : ""}</p>`,
+        `<p>${prev ? `<a href="${esc(withBase(base, `/categories/${prev.id}`))}">← ${esc(prev.name)}</a> · ` : ""}<a href="${esc(withBase(base, "/categories"))}">Saari categories →</a> · <a href="${esc(withBase(base, "/sites"))}">Poori directory →</a>${next ? ` · <a href="${esc(withBase(base, `/categories/${next.id}`))}">${esc(next.name)} →</a>` : ""}</p>`,
       links: sites.map((s) => ({ href: s.url, label: s.name }))
     };
   }
@@ -185,29 +184,27 @@ function routeMeta(path, base) {
   let jsonLd = [];
 
   if (path === "/") {
-    const stats = SITE_STATS || {};
     body =
-      `<img src="${esc(withBase(base, "/og-image.jpg"))}" alt="Tools Websites Directory — 78 tools websites ki directory, tiers A se F tak" width="2192" height="1152" style="max-width:100%;height:auto;border-radius:8px;margin-top:16px" />` +
-      `<p>${stats.sites || SITES.length} sites · ${stats.entries || ""} report entries · ${stats.tiers || 6} tiers · Research: ${esc(stats.researchDate || "26 Nov 2026")}</p>` +
-      `<h2>Teen bade findings</h2>${(FINDINGS || [])
-        .map((f) => `<h3>${f.n}. ${esc(f.title)}</h3><p>${esc(f.text)}</p>`)
-        .join("")}` +
-      `<h2>Top 10 additions</h2><ol>${(TOP10 || [])
-        .map((t) => `<li><a href="${esc(withBase(base, "/top-10"))}">${esc(t.title)}</a></li>`)
-        .join("")}</ol>` +
-      `<h2>Tiers — A se F tak</h2><ul>${(TIERS || [])
-        .map(
-          (t) =>
-            `<li><a href="${esc(withBase(base, `/tiers/${t.id}`))}">Tier ${t.letter} — ${esc(t.name)}</a> — ${sitesByTier(t.id).length} sites</li>`
-        )
+      `<img src="${esc(withBase(base, "/hero-poster.jpg"))}" alt="Tools Websites Directory — free online tools websites ki directory" style="max-width:100%;height:auto;border-radius:8px;margin-top:16px" />` +
+      `<p>${SITES.length} sites · ${CATEGORIES.length} categories · ${BEST_PICKS.length} best picks · Free to browse</p>` +
+      `<h2>Popular categories</h2><ul>${["math", "finance", "health", "pakistan", "construction", "units"]
+        .map((id) => {
+          const c = CATEGORIES.find((x) => x.id === id);
+          return `<li><a href="${esc(withBase(base, `/categories/${c.id}`))}">${esc(c.name)}</a> — ${esc(c.short)} — ${sitesByCategory(c.id).length} sites</li>`;
+        })
         .join("")}</ul>` +
+      `<h2>Best sites — ek nazar mein</h2><ol>${BEST_PICKS
+        .map((s) => `<li><a href="${esc(s.url)}">${esc(s.name)}</a> — ${esc(s.why)}</li>`)
+        .join("")}</ol>` +
+      `<h2>How to use this directory</h2><ol><li><strong>Search ya category choose karein</strong> — search karein ya apne kaam ki category kholein.</li><li><strong>Best pick se compare karein</strong> — har category page par best pick likha hai.</li><li><strong>Site kholein — free</strong> — card par “Visit” link se site khul jati hai; zyada tar sites free hain aur bina sign-up ke chalti hain.</li></ol>` +
       `<h2>Saari sites</h2>` +
       siteLinkList(SITES) +
       faqHtml(HOME_FAQS);
     links = [
       { href: "/sites", label: "Sites" },
-      { href: "/top-10", label: "Top 10" },
-      ...(TIERS || []).map((t) => ({ href: `/tiers/${t.id}`, label: `Tier ${t.letter}` })),
+      { href: "/categories", label: "Categories" },
+      { href: "/best", label: "Best" },
+      ...CATEGORIES.map((c) => ({ href: `/categories/${c.id}`, label: c.name })),
       ...SITES.map((s) => ({ href: s.url, label: s.name }))
     ];
     jsonLd = [
@@ -217,8 +214,9 @@ function routeMeta(path, base) {
     ];
   } else if (path === "/sites") {
     body =
-      `<p>${SITES.length} sites — har site ka tier, tools ki tadaad, focus aur notes.</p>` +
-      `<h2>Poori directory — tier ke hisaab se</h2>` +
+      `<img src="${esc(withBase(base, "/images/sites.jpg"))}" alt="Free online tools websites ki poori directory" style="max-width:100%;height:auto;border-radius:8px;margin-bottom:16px" />` +
+      `<p>${SITES.length} sites — har site kya offer karti hai, kitne tools hain aur kis zabaan mein hai. Category aur size se filter karein ya naam se search karein.</p>` +
+      `<h2>Poori directory</h2>` +
       siteLinkList(SITES) +
       faqHtml(SITES_FAQS);
     links = SITES.map((s) => ({ href: s.url, label: s.name }));
@@ -231,86 +229,59 @@ function routeMeta(path, base) {
       ),
       faqJsonLd(SITES_FAQS)
     ];
-  } else if (path === "/top-10") {
-    body =
-      (TOP10 || [])
-        .map((t) => `<h2>${t.n}. ${esc(t.title)}</h2><p>${esc(t.text)}</p>`)
-        .join("") +
-      faqHtml(TOP10_FAQS) +
-      `<p><strong>Order yaad rakho:</strong> pehle zabaan, phir jagah, phir features.</p>`;
-    links = [{ href: "/gaps", label: "Gaps" }];
-    jsonLd = [
-      webPageJsonLd({ title: page.title, description: page.description, path }),
-      breadcrumbJsonLd(crumbsFor([["Top 10", "/top-10"]])),
-      faqJsonLd(TOP10_FAQS)
-    ];
-  } else if (path === "/gaps") {
-    const gap = GAP_TEXT || {};
-    body =
-      `<h2>Zabaan ka gap</h2><p>${esc(gap.language || "")}</p>` +
-      `<h2>Pakistan ka gap</h2><p>${esc(gap.pakistan || "")}</p>` +
-      `<h2>Features ka gap</h2><p>${esc(gap.features || "")}</p>` +
-      `<h2>Feature gaps — table</h2><table><thead><tr><th>Feature</th><th>Status</th></tr></thead><tbody>${(FEATURE_GAPS || [])
-        .map((f) => `<tr><td>${esc(f.feature)}</td><td>${esc(f.status)}</td></tr>`)
-        .join("")}</tbody></table>` +
-      `<h2>Earning models</h2>${(EARNING_MODELS || [])
-        .map((m) => `<h3>${esc(m.model)}</h3><p>${esc(m.detail)}</p>`)
-        .join("")}` +
-      `<h2>Khali niches</h2><ul>${(EMPTY_NICHES || [])
-        .map((n) => `<li><strong>${esc(n.niche)}:</strong> ${esc(n.detail)}</li>`)
-        .join("")}</ul>` +
-      faqHtml(GAPS_FAQS) +
-      `<p><strong>Race ab tadaad ki nahi — race zabaan, jagah aur bharose ki hai.</strong></p>`;
-    links = [{ href: "/top-10", label: "Top 10" }];
-    jsonLd = [
-      webPageJsonLd({ title: page.title, description: page.description, path }),
-      breadcrumbJsonLd(crumbsFor([["Gaps", "/gaps"]])),
-      faqJsonLd(GAPS_FAQS)
-    ];
   } else if (path === "/categories") {
     body =
-      `<h2>Category-wise jaiza</h2>` +
-      `<table><thead><tr><th>Category</th><th>Sab se achhi coverage</th><th>Kamzor / Ghayab</th></tr></thead><tbody>${(CATEGORY_ROWS || [])
+      `<img src="${esc(withBase(base, "/images/categories.jpg"))}" alt="Tools websites by category — maths, finance, health, Pakistan tools aur zyada" style="max-width:100%;height:auto;border-radius:8px;margin-bottom:16px" />` +
+      `<ul>${(CATEGORIES || [])
         .map(
-          (r) =>
-            `<tr><td><strong>${esc(r.category)}</strong></td><td>${esc(r.strong)}</td><td>${esc(r.weak)}</td></tr>`
+          (c) =>
+            `<li><a href="${esc(withBase(base, `/categories/${c.id}`))}">${esc(c.name)}</a> — ${esc(c.short)} — ${sitesByCategory(c.id).length} sites</li>`
         )
-        .join("")}</tbody></table>` +
-      `<h2>Har kaam ke liye best site</h2><ul><li><strong>EMI / loan calculator:</strong> finance category mein sab se bara collection SumKitTool (145 finance tools) aur Toolsped (126) ka hai.</li><li><strong>Age calculator:</strong> calculator.net aur Omni Calculator — dono ke health sections mein age tools hain.</li><li><strong>Percentage calculator:</strong> calculator.net (percentage, fractions) aur Calculator Soup (maths, statistics).</li><li><strong>BMI calculator:</strong> calculator.net (fitness/health) aur Omni Calculator (Health — 440 tools).</li><li><strong>Tax calculator:</strong> US/UK tax ke liye Good Calculators; Pakistan tax ke liye <a href="${esc(withBase(base, "/tiers/d"))}">Tier D</a> ki sites.</li><li><strong>Construction calculator:</strong> Inch Calculator — is category mein sab se mazboot (math/science, construction, electrical).</li></ul>`;
-    links = [{ href: "/sites", label: "Sites" }];
+        .join("")}</ul>` +
+      `<h2>Har kaam ke liye best site</h2><ul><li><strong>EMI / loan calculator:</strong> finance category mein sab se bara collection SumKitTool (145 finance tools) aur Toolsped (126) ka hai.</li><li><strong>Age calculator:</strong> calculator.net aur Omni Calculator — dono ke health sections mein age tools hain.</li><li><strong>Percentage calculator:</strong> calculator.net (percentage, fractions) aur Calculator Soup (maths, statistics).</li><li><strong>BMI calculator:</strong> calculator.net (fitness/health) aur Omni Calculator (Health — 440 tools).</li><li><strong>Tax calculator:</strong> US/UK tax ke liye Good Calculators; Pakistan tax ke liye <a href="${esc(withBase(base, "/categories/pakistan"))}">Pakistan Tools</a> ki sites.</li><li><strong>Construction calculator:</strong> Inch Calculator — is category mein sab se mazboot (math/science, construction, electrical).</li><li><strong>Zakat calculator:</strong> IslamicTool (live nisab) aur Ghulmil (Urdu).</li><li><strong>CGPA / MDCAT:</strong> PakDar (48+ tools).</li></ul>`;
+    links = CATEGORIES.map((c) => ({ href: `/categories/${c.id}`, label: c.name }));
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
-      breadcrumbJsonLd(crumbsFor([["Categories", "/categories"]]))
+      breadcrumbJsonLd(crumbsFor([["Categories", "/categories"]])),
+      itemListJsonLd(
+        "Tools website categories",
+        CATEGORIES.map((c) => ({ name: c.name, url: `${SITE_URL}/categories/${c.id}` }))
+      )
+    ];
+  } else if (path === "/best") {
+    body =
+      `<img src="${esc(withBase(base, "/images/best.jpg"))}" alt="Best calculator websites — top sites ki comparison" style="max-width:100%;height:auto;border-radius:8px;margin-bottom:16px" />` +
+      `<h2>Best calculator websites — top 5</h2>${RANKED_BEST
+        .map((s) => `<h3>${s.n}. <a href="${esc(s.url)}">${esc(s.name)}</a> — ${esc(s.tools)}</h3><p>${esc(s.why)}</p><p><strong>Best for:</strong> ${esc(s.bestFor)}</p>`)
+        .join("")}` +
+      `<h2>Best free calculator sites</h2><p>calculator.net, Omni Calculator, Calculator Soup, Inch Calculator aur Toolsped — paanchon free hain aur bina sign-up ke chalti hain. Steps ke liye paid sites (Wolfram Alpha, Symbolab, Mathway — ~$10/month) se behtar muft option Calculator Soup hai.</p>` +
+      `<h2>calculator.net alternatives</h2><p>calculator.net ke best alternatives: Omni Calculator (sab se bara catalogue), Calculator Soup (maths aur steps) aur Inch Calculator (construction aur conversions). Teeno free hain.</p>` +
+      `<h2>Omni Calculator alternatives</h2><p>Omni ke alternatives: calculator.net (tez aur simple), Calculator Soup (maths par gehra) aur MiniWebtool (2,022 tools + API).</p>` +
+      `<h2>calculator.net vs Omni Calculator — which is better?</h2><p>Catalogue mein Omni aage hai (3,938 tools vs ~200), aur us ki wazahat aur formulas bhi gehri hain. calculator.net tez aur simple hai. Aam user ke liye calculator.net, research ke liye Omni.</p>` +
+      `<h2>calculator.net vs Calculator Soup — which is better?</h2><p>calculator.net har tarah ke tools deta hai (finance, health, maths), jab ke Calculator Soup maths, statistics aur geometry mein gehra hai aur kai tools mein darmiyani steps bhi dikhata hai. Maths ke liye Soup, baaki sab ke liye calculator.net.</p>` +
+      `<h2>Which calculator website is best?</h2><p>Koi aik site har kaam ke liye best nahi: aam hisaab ke liye calculator.net, gehri wazahat ke liye Omni Calculator, maths ke steps ke liye Calculator Soup, aur construction ke liye Inch Calculator.</p>` +
+      faqHtml(BEST_FAQS);
+    links = RANKED_BEST.map((s) => ({ href: s.url, label: s.name }));
+    jsonLd = [
+      webPageJsonLd({ title: page.title, description: page.description, path }),
+      breadcrumbJsonLd(crumbsFor([["Best", "/best"]])),
+      itemListJsonLd(
+        "Best calculator websites",
+        RANKED_BEST.map((s) => ({ name: s.name, url: s.url }))
+      ),
+      faqJsonLd(BEST_FAQS)
     ];
   } else if (path === "/about") {
     body =
-      `<p><strong>Disclaimer:</strong> ${esc(DISCLAIMER)}</p>` +
-      `<h2>Yeh directory kya hai</h2><p>Tools Websites Directory 26 Nov 2026 ki research report par mabni hai. Us report mein ${(SITE_STATS || {}).sites || SITES.length} tools websites ka jaiza liya gaya — ${(SITE_STATS || {}).entries || ""} report entries, ${(SITE_STATS || {}).tiers || 6} tiers mein bati hui.</p>` +
-      `<h2>Tiers kaise kaam karte hain</h2><ul>${(TIERS || [])
-        .map(
-          (t) =>
-            `<li><a href="${esc(withBase(base, `/tiers/${t.id}`))}">Tier ${t.letter} — ${esc(t.name)}</a>: ${esc(t.takeaway)}</li>`
-        )
-        .join("")}</ul>` +
+      `<h2>Yeh directory kya karti hai</h2><p>Tools Websites Directory ${SITES.length} free online tools websites ko aik hi jagah par rakhti hai. Har site ke liye likha hai ke woh kya offer karti hai, kitne tools hain, kis zabaan mein hai, aur kis kaam ke liye best hai.</p>` +
+      `<h2>Sites kaise choose aur list hoti hain</h2><p>Har site ko us ke apne tools, focus aur language ke hisaab se list kiya jata hai. Koi site pay karke upar nahi aati. Best picks us site ke catalogue aur coverage par likhe jate hain. Tool counts sites ki apni ginti hain aur waqt ke saath badal sakti hain. Tax slabs, bijli tariff, nisab aur gold rates badalte rehte hain, is liye yeh directory live rates publish nahi karti — live figures hamesha us site par check karein jis ka link diya gaya hai.</p>` +
       `<h2>Kaun likhta hai</h2><p>By ${esc(AUTHOR_NAME)}.</p>` +
       faqHtml(ABOUT_FAQS);
-    links = (TIERS || []).map((t) => ({ href: `/tiers/${t.id}`, label: `Tier ${t.letter}` }));
+    links = [{ href: "/sites", label: "Sites" }];
     jsonLd = [
       webPageJsonLd({ title: page.title, description: page.description, path }),
       breadcrumbJsonLd(crumbsFor([["About", "/about"]])),
       faqJsonLd(ABOUT_FAQS)
-    ];
-  } else if (path === "/sources") {
-    body =
-      `<h2>Sources</h2><ul>${(SOURCES || [])
-        .map((s) => `<li>${esc(s)}</li>`)
-        .join("")}</ul>` +
-      `<h2>Jo verify nahi hua</h2><p>${esc(NOT_VERIFIED)}</p>` +
-      `<h2>Disclaimer</h2><p>${esc(DISCLAIMER)}</p>`;
-    links = [{ href: "/about", label: "About" }];
-    jsonLd = [
-      webPageJsonLd({ title: page.title, description: page.description, path }),
-      breadcrumbJsonLd(crumbsFor([["Sources", "/sources"]]))
     ];
   } else {
     links = [{ href: "/sites", label: "Sites" }];
@@ -416,7 +387,7 @@ function main() {
       `<meta property="og:image" content="${OG_IMAGE}" />\n` +
       `<meta property="og:image:width" content="2192" />\n` +
       `<meta property="og:image:height" content="1152" />\n` +
-      `<meta property="og:image:alt" content="Tools Websites Directory — 78 tools websites ki directory, tiers A se F tak" />\n` +
+      `<meta property="og:image:alt" content="${esc(OG_ALT)}" />\n` +
       `<meta property="og:locale" content="ur_PK" />\n` +
       `<meta name="twitter:card" content="summary_large_image" />\n` +
       `<meta name="twitter:title" content="${esc(meta.title)}" />\n` +

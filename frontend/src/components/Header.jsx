@@ -1,8 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { SITE_NAME } from "../config/site.js";
-import { TIERS } from "../config/sites-data.js";
 import SearchBar from "./SearchBar.jsx";
+import {
+  HomeIcon,
+  ListIcon,
+  TrophyIcon,
+  QuestionIcon,
+  GridIcon
+} from "./Icons.jsx";
 
 // Theme: default light; a saved choice wins. The pre-paint script in
 // index.html sets data-theme before first paint, so this reads the
@@ -56,16 +62,11 @@ export default function Header() {
           {theme === "dark" ? "☀ Light" : "☾ Dark"}
         </button>
         <nav aria-label="Main navigation">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/sites">Sites</NavLink>
-          {(TIERS || []).map((t) => (
-            <NavLink key={t.id} to={`/tiers/${t.id}`}>Tier {t.letter}</NavLink>
-          ))}
-          <NavLink to="/top-10">Top 10</NavLink>
-          <NavLink to="/gaps">Gaps</NavLink>
-          <NavLink to="/categories">Categories</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/sources">Sources</NavLink>
+          <NavLink to="/"><HomeIcon size={15} className="nav-icon" />Home</NavLink>
+          <NavLink to="/sites"><ListIcon size={15} className="nav-icon" />Sites</NavLink>
+          <NavLink to="/categories"><GridIcon size={15} className="nav-icon" />Categories</NavLink>
+          <NavLink to="/best"><TrophyIcon size={15} className="nav-icon" />Best</NavLink>
+          <NavLink to="/about"><QuestionIcon size={15} className="nav-icon" />About</NavLink>
         </nav>
       </div>
     </header>

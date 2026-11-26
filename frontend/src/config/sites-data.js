@@ -2,7 +2,7 @@
 // "Tools Websites: Poori List aur Gaps" (Roman Urdu, research date 26 Nov 2026).
 // One entry per INDIVIDUAL website. urlCertain is true only when the PDF
 // prints the domain or it is a famous/obvious domain; false = best-guess domain.
-export const SITE_STATS = { sites: 78, entries: 43, tiers: 6, researchDate: "26 Nov 2026" };
+export const SITE_STATS = { sites: 76, entries: 43, tiers: 6, researchDate: "26 Nov 2026" };
 
 export const TIERS = [
   { id: "a", letter: "A", name: "Sab Se Badi Sites", subtitle: "Giants", takeaway: "Saari English, saari US-centric, ads par chalti hain. Urdu, Pakistan tools, dark mode, offline — in mein se kuch bhi in ke paas nahi." },
@@ -56,7 +56,7 @@ SITES.push(
   { name: "Smallpdf", url: "https://smallpdf.com", urlCertain: true, tier: "c", tools: "30+", focus: "Merge, split, compress, convert, OCR, sign", language: "", notes: "Freemium: free limits, Premium ~$4-9/mo. Files upload hoti hain — privacy gap yahin hai" },
   { name: "PDF24", url: "https://pdf24.org", urlCertain: true, tier: "c", tools: "PDF+image", focus: "Merge, split, compress, convert, OCR, sign", language: "", notes: "Freemium / ads; files upload hoti hain — privacy gap yahin hai" },
   { name: "CalculatorApp.me", url: "https://calculatorapp.me", urlCertain: true, tier: "c", tools: "150+", focus: "Finance, health, maths, tax (US/UK/CA/AU/IN)", language: "", notes: "Sab se feature-complete chhoti site: PDF export, dark mode, PWA/offline, embed, local history, voice input — sab free" },
-  { name: "CalculateItNow", url: "https://calculateitnow.com", urlCertain: false, tier: "c", tools: "413", focus: "General + generated date/conversion/tax pages", language: "", notes: "Instant embed — koi form/approval nahi. Sep 2026 launch" },
+  { name: "CalculateItNow", url: "https://www.calculateitnow.com", urlCertain: false, tier: "c", tools: "413", focus: "General + generated date/conversion/tax pages", language: "", notes: "Instant embed — koi form/approval nahi. Sep 2026 launch" },
   { name: "Calculators Planet", url: "https://calculatorsplanet.com", urlCertain: false, tier: "c", tools: "382+", focus: "Financial, math, health, everyday; formulas established standards se", language: "", notes: "Free, no sign-up" },
   { name: "SumKitTool", url: "https://sumkittool.com", urlCertain: false, tier: "c", tools: "331+", focus: "Finance 145, math 70, text, health, home, dev; US/UK/CA/AU salary+tax", language: "", notes: "Har tool par formula + worked example + sources. Founder Sargodha, Pakistan se" },
   { name: "calculate.at", url: "https://calculate.at", urlCertain: true, tier: "c", tools: "290+", focus: "Finance, health, math, construction; mortgage, EMI, tax, retirement/FIRE, solar ROI", language: "", notes: "Free, ad-supported / no sign-up" },
@@ -69,16 +69,14 @@ SITES.push(
   { name: "Sejda", url: "https://sejda.com", urlCertain: false, tier: "c", tools: "PDF set", focus: "PDF edit/convert", language: "", notes: "Freemium; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)" },
   { name: "PDFgear", url: "https://pdfgear.com", urlCertain: false, tier: "c", tools: "PDF set", focus: "PDF edit/convert", language: "", notes: "Free; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)" },
   { name: "PDF Candy", url: "https://pdfcandy.com", urlCertain: false, tier: "c", tools: "PDF set", focus: "PDF edit/convert", language: "", notes: "Free; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)" },
-  { name: "Stirling-PDF", url: "https://stirlingpdf.com", urlCertain: false, tier: "c", tools: "60+", focus: "PDF edit/convert; 60+ tools, open source", language: "", notes: "Open source; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)" },
+  { name: "Stirling-PDF", url: "https://www.stirling.com", urlCertain: false, tier: "c", tools: "60+", focus: "PDF edit/convert; 60+ tools, open source", language: "", notes: "Open source; group entry (Sejda / PDFgear / PDF Candy / Stirling-PDF)" },
   { name: "Vanta Calc", url: "https://vantacalc.com", urlCertain: false, tier: "c", tools: "n/v", focus: "General + niche: LLM API cost calculator (110+ models, data 23 Nov 2026 refresh), stats, GPA", language: "", notes: "AI-era calculators — 2026 ka naya niche" },
-  { name: "Calciro", url: "https://calciro.com", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry (Calciro, Calculora, SolveIndex, ZFinPro, Kinced, fixmint, The Mighty Calculator, ROIStack)" },
   { name: "Calculora", url: "https://calculora.com", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry" },
   { name: "SolveIndex", url: "https://solveindex.com", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math; business/SaaS metrics", language: "", notes: "Free/freemium, no sign-up; group entry" },
   { name: "ZFinPro", url: "https://zfinpro.com", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry" },
   { name: "Kinced", url: "https://kinced.com", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry" },
-  { name: "fixmint", url: "https://fixmint.com", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry" },
+  { name: "fixmint", url: "https://fixmint.cc", urlCertain: false, tier: "c", tools: "Chhote sets", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry" },
   { name: "The Mighty Calculator", url: "https://themightycalculator.com", urlCertain: false, tier: "c", tools: "38", focus: "Finance/health/math", language: "", notes: "Free/freemium, no sign-up; group entry" },
-  { name: "ROIStack", url: "https://roistack.com", urlCertain: false, tier: "c", tools: "38+", focus: "Finance/health/math; AI-ROI 38+", language: "", notes: "Free/freemium, no sign-up; group entry" },
   { name: "SudoTool", url: "https://sudotool.com", urlCertain: false, tier: "c", tools: "n/v", focus: "Finance, mortgage, dev, date tools", language: "", notes: "Free, koi upload nahi" },
   // ---- Tier D: Pakistan-Specific Sites (8) ----
   { name: "HissabAI", url: "https://hissabai.com", urlCertain: true, tier: "d", tools: "20", focus: "FBR 2026-27 salary tax, freelancer tax, GST, bijli bill (NEPRA Feb 2026), Zakat (aaj ka nisab), committees, PSX dividends, PKR inflation", language: "", notes: "WhatsApp tracker EN / Roman Urdu / Urdu mein" },

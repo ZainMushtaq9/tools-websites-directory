@@ -18,8 +18,8 @@ export default function NotFound() {
           <Link to="/">home page</Link> par wapas jayein.
         </p>
         <p>
-          <Link to="/sites">Saari sites →</Link> · <Link to="/top-10">Top 10 →</Link> ·{" "}
-          <Link to="/gaps">Gaps →</Link>
+          <Link to="/sites">Saari sites →</Link> · <Link to="/best">Best sites →</Link> ·{" "}
+          <Link to="/categories">Categories →</Link>
         </p>
       </div>
     </>

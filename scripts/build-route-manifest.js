@@ -3,16 +3,16 @@
 import { writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { publicPages, TIERS, SITES } from "../frontend/src/config/pages.js";
+import { publicPages, CATEGORIES, SITES } from "../frontend/src/config/pages.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = {
   generatedAt: new Date().toISOString(),
-  tiers: (TIERS || []).map((t) => `/tiers/${t.id}`),
+  categories: (CATEGORIES || []).map((c) => `/categories/${c.id}`),
   sites: (SITES || []).length,
   pages: publicPages.map((p) => p.path)
 };
 writeFileSync(join(root, "frontend/public/route-manifest.json"), JSON.stringify(manifest, null, 2));
 console.log(
-  `route-manifest.json written: ${manifest.pages.length} public pages, ${manifest.tiers.length} tiers, ${manifest.sites} sites.`
+  `route-manifest.json written: ${manifest.pages.length} public pages, ${manifest.categories.length} categories, ${manifest.sites} sites.`
 );

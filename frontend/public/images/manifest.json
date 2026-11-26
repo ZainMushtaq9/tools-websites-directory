@@ -1,0 +1,134 @@
+{
+  "images": [
+    {
+      "alt": "Best calculator websites \u2014 top sites ki comparison",
+      "file": "best.jpg",
+      "height": 800,
+      "page": "Best",
+      "size_kb": 121.8,
+      "width": 1200
+    },
+    {
+      "alt": "Free online tools websites ki poori directory",
+      "file": "sites.jpg",
+      "height": 800,
+      "page": "Sites",
+      "size_kb": 77.5,
+      "width": 1200
+    },
+    {
+      "alt": "Rangon ke hisaab se tartib diye gaye folders aur cards \u2014 Categories page",
+      "file": "categories.jpg",
+      "height": 800,
+      "page": "Categories",
+      "size_kb": 43.9,
+      "width": 1200
+    },
+    {
+      "alt": "Calculator, pie chart, shapes aur ruler \u2014 Maths tools ka page",
+      "file": "math.jpg",
+      "height": 800,
+      "page": "Math",
+      "size_kb": 37.8,
+      "width": 1200
+    },
+    {
+      "alt": "Bank, bar chart, upar jata hua arrow aur sikkon ke dher \u2014 Finance tools ka page",
+      "file": "finance.jpg",
+      "height": 800,
+      "page": "Finance",
+      "size_kb": 44.4,
+      "width": 1200
+    },
+    {
+      "alt": "Dil aur pulse line, wazan wali scale aur stethoscope \u2014 Health tools ka page",
+      "file": "health.jpg",
+      "height": 800,
+      "page": "Health",
+      "size_kb": 42.6,
+      "width": 1200
+    },
+    {
+      "alt": "Peela hard hat, ruler, blueprint aur ghar ka frame \u2014 Construction tools ka page",
+      "file": "construction.jpg",
+      "height": 800,
+      "page": "Construction",
+      "size_kb": 46.6,
+      "width": 1200
+    },
+    {
+      "alt": "Calendar, ghari, hourglass aur timeline \u2014 Date aur Time tools ka page",
+      "file": "datetime.jpg",
+      "height": 800,
+      "page": "Date & Time",
+      "size_kb": 34.3,
+      "width": 1200
+    },
+    {
+      "alt": "Measuring tape, tarazu, wazan aur measuring jug \u2014 Units aur Conversion tools ka page",
+      "file": "units.jpg",
+      "height": 800,
+      "page": "Units",
+      "size_kb": 48.1,
+      "width": 1200
+    },
+    {
+      "alt": "Sabz chand sitara, rupee ke sikke aur calculator \u2014 Pakistan tools ka page",
+      "file": "pakistan.jpg",
+      "height": 800,
+      "page": "Pakistan",
+      "size_kb": 45.6,
+      "width": 1200
+    },
+    {
+      "alt": "Chand, masjid ka gumbad, geometric sitara aur calculator \u2014 Islamic tools ka page",
+      "file": "islamic.jpg",
+      "height": 800,
+      "page": "Islamic",
+      "size_kb": 38.0,
+      "width": 1200
+    },
+    {
+      "alt": "Gandum, tractor, suraj aur calculator \u2014 kheti tools ka page",
+      "file": "agriculture.jpg",
+      "height": 800,
+      "page": "Agriculture",
+      "size_kb": 69.6,
+      "width": 1200
+    },
+    {
+      "alt": "PDF documents, download arrow aur magnifier \u2014 PDF tools ka page",
+      "file": "pdf.jpg",
+      "height": 800,
+      "page": "PDF",
+      "size_kb": 26.7,
+      "width": 1200
+    },
+    {
+      "alt": "Document, qalam aur keyboard \u2014 Text tools ka page",
+      "file": "text.jpg",
+      "height": 800,
+      "page": "Text",
+      "size_kb": 55.4,
+      "width": 1200
+    },
+    {
+      "alt": "Laptop par code brackets, terminal aur gear \u2014 Developer tools ka page",
+      "file": "developer.jpg",
+      "height": 800,
+      "page": "Developer",
+      "size_kb": 29.3,
+      "width": 1200
+    },
+    {
+      "alt": "Atom, flask, microscope aur test tubes \u2014 Science tools ka page",
+      "file": "science.jpg",
+      "height": 800,
+      "page": "Science",
+      "size_kb": 43.0,
+      "width": 1200
+    }
+  ],
+  "style": "Dark navy (#0f1e33) flat vector illustration, light blue + teal + warm amber, no text in any image",
+  "total_kb": 804.6
+}

@@ -27,7 +27,7 @@ export default function Search() {
     <>
       <SeoHead
         title="Search"
-        description="Tools websites ko naam, focus ya keyword se search karein — har site ka tier, tools aur notes aik hi jagah par."
+        description="Tools websites ko naam, focus ya keyword se search karein — har site kya offer karti hai, kitne tools hain aur kis category mein hai, aik hi jagah par."
         path="/search"
         noindex
         jsonLd={[

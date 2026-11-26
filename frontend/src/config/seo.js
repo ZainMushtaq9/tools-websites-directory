@@ -75,7 +75,7 @@ export function websiteJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "78 tools websites ka mukammal jaiza — tiers, top 10 additions, gaps aur categories, Roman Urdu mein."
+      "76 free tools websites ki directory — best calculator sites, categories aur Pakistan tools, Roman Urdu mein."
   };
 }
 
@@ -86,6 +86,6 @@ export function organizationJsonLd() {
     name: SITE_NAME,
     url: SITE_URL,
     description:
-      "Tools Websites Directory — 78 tools websites ka mukammal jaiza."
+      "Tools Websites Directory — 76 free tools websites ki directory, categories aur best picks ke saath."
   };
 }

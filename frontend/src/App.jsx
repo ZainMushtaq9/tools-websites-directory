@@ -6,12 +6,10 @@ import Footer from "./components/Footer.jsx";
 import ErrorBoundary from "./components/ErrorBoundary.jsx";
 import Home from "./pages/Home.jsx";
 import Sites from "./pages/Sites.jsx";
-import Tier from "./pages/Tier.jsx";
-import Top10 from "./pages/Top10.jsx";
-import Gaps from "./pages/Gaps.jsx";
 import Categories from "./pages/Categories.jsx";
+import Category from "./pages/Category.jsx";
+import Best from "./pages/Best.jsx";
 import About from "./pages/About.jsx";
-import Sources from "./pages/Sources.jsx";
 import Search from "./pages/Search.jsx";
 import NotFound from "./pages/NotFound.jsx";
 
@@ -33,12 +31,10 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sites" element={<Sites />} />
-            <Route path="/tiers/:tier" element={<Tier />} />
-            <Route path="/top-10" element={<Top10 />} />
-            <Route path="/gaps" element={<Gaps />} />
             <Route path="/categories" element={<Categories />} />
+            <Route path="/categories/:slug" element={<Category />} />
+            <Route path="/best" element={<Best />} />
             <Route path="/about" element={<About />} />
-            <Route path="/sources" element={<Sources />} />
             <Route path="/search" element={<Search />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

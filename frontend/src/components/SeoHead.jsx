@@ -22,7 +22,7 @@ export default function SeoHead({ title, description, path, jsonLd, type = "webs
       <meta property="og:image" content={OG_IMAGE} />
       <meta property="og:image:width" content={OG_IMAGE_WIDTH} />
       <meta property="og:image:height" content={OG_IMAGE_HEIGHT} />
-      <meta property="og:image:alt" content="Tools Websites Directory — 78 tools websites ki directory, tiers A se F tak" />
+      <meta property="og:image:alt" content="Tools Websites Directory — 76 free online tools websites" />
       <meta property="og:locale" content="ur_PK" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

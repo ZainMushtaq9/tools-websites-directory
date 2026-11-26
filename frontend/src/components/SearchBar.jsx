@@ -1,6 +1,8 @@
 // Controlled search input. The parent owns the value: the header
 // navigates to /search?q=… on submit, the search page filters live
 // on change. The query stays in the URL so a search can be shared.
+import { SearchIcon } from "./Icons.jsx";
+
 export default function SearchBar({
   value,
   onChange,
@@ -20,6 +22,7 @@ export default function SearchBar({
       }}
     >
       <label htmlFor={id} className="sr-only">{label}</label>
+      <SearchIcon size={18} className="search-icon" />
       <input
         id={id}
         type="search"

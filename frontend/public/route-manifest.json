@@ -1,27 +1,39 @@
 {
-  "generatedAt": "2026-11-26T02:40:52.800Z",
-  "tiers": [
-    "/tiers/a",
-    "/tiers/b",
-    "/tiers/c",
-    "/tiers/d",
-    "/tiers/e",
-    "/tiers/f"
+  "generatedAt": "2026-11-26T04:18:51.003Z",
+  "categories": [
+    "/categories/math",
+    "/categories/finance",
+    "/categories/health",
+    "/categories/construction",
+    "/categories/datetime",
+    "/categories/units",
+    "/categories/pakistan",
+    "/categories/islamic",
+    "/categories/agriculture",
+    "/categories/pdf",
+    "/categories/text",
+    "/categories/developer",
+    "/categories/science"
   ],
-  "sites": 78,
+  "sites": 76,
   "pages": [
     "/",
     "/sites",
-    "/tiers/a",
-    "/tiers/b",
-    "/tiers/c",
-    "/tiers/d",
-    "/tiers/e",
-    "/tiers/f",
-    "/top-10",
-    "/gaps",
+    "/best",
     "/categories",
-    "/about",
-    "/sources"
+    "/categories/math",
+    "/categories/finance",
+    "/categories/health",
+    "/categories/construction",
+    "/categories/datetime",
+    "/categories/units",
+    "/categories/pakistan",
+    "/categories/islamic",
+    "/categories/agriculture",
+    "/categories/pdf",
+    "/categories/text",
+    "/categories/developer",
+    "/categories/science",
+    "/about"
   ]
 }
